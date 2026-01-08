@@ -627,3 +627,107 @@ input:focus, textarea:focus{
   .contact{grid-template-columns:1fr}
   .perks{grid-template-columns:1fr}
 }
+/* ==========================
+   FIX Marcas (mockups)
+   - evita tarjetas "blancas"
+   - centra mejor la imagen
+   - look premium igual al resto
+   ========================== */
+
+.brands-mockups{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:14px;
+  margin-top:14px;
+}
+
+/* Card premium igual al estilo general */
+.brand-mockup{
+  margin:0;
+  position:relative;
+  border-radius: var(--radius);
+  padding:14px 14px 12px;
+  border:1px solid rgba(255,255,255,.10);
+  background:
+    radial-gradient(110% 130% at 0% 0%, rgba(124,58,237,.16), transparent 60%),
+    radial-gradient(110% 130% at 100% 0%, rgba(34,211,238,.12), transparent 58%),
+    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.04),
+    0 12px 35px rgba(0,0,0,.45);
+  overflow:hidden;
+  text-align:center;
+  transition:.2s ease;
+}
+
+/* barra de color (como servicios) */
+.brand-mockup::before{
+  content:"";
+  position:absolute;
+  left:0; top:10px; bottom:10px;
+  width:4px;
+  border-radius:999px;
+  background: linear-gradient(180deg, var(--accent), var(--accent2));
+  opacity:.95;
+  box-shadow: 0 0 26px rgba(34,211,238,.18);
+}
+
+.brand-mockup:hover{
+  transform: translateY(-2px);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.65),
+    0 0 40px rgba(124,58,237,.18);
+}
+
+/* Contenedor interno oscuro para “matar” cualquier blanco del PNG */
+.brand-mockup img{
+  width:100%;
+  height:140px;
+  object-fit:contain;
+  display:block;
+  margin:2px auto 10px;
+  padding:10px;
+  border-radius:14px;
+  background: rgba(0,0,0,.35);            /* <<< esto elimina el “white card look” */
+  border: 1px solid rgba(255,255,255,.08);
+  filter: drop-shadow(0 18px 28px rgba(0,0,0,.65));
+}
+
+/* texto */
+.brand-mockup figcaption{
+  font-weight:900;
+  letter-spacing:.10em;
+  font-size:12px;
+  color:rgba(255,255,255,.88);
+}
+
+/* fallback (por si algún png no carga) */
+.brand-fallback{
+  height:140px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(0,0,0,.35);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  margin:2px auto 10px;
+}
+.brand-fallback__icon{
+  width:44px; height:44px;
+  border-radius:16px;
+  display:grid; place-items:center;
+  background:rgba(34,211,238,.12);
+  border:1px solid rgba(34,211,238,.22);
+  box-shadow: 0 0 26px rgba(34,211,238,.10);
+  font-size:20px;
+}
+.brand-fallback__name{ font-weight:900; letter-spacing:.08em; }
+.brand-fallback__sub{ font-size:12px; color:var(--muted2); }
+
+/* móvil */
+@media (max-width: 720px){
+  .brands-mockups{ grid-template-columns: 1fr; }
+  .brand-mockup img{ height:160px; }
+}
