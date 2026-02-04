@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OASIS AIR CLEANER SERVICES LLC | Paga y Agenda</title>
+  <meta name="description" content="Paga el depósito y agenda tu cita con OASIS. Servicios de aire acondicionado en Puerto Rico." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand">
+        <img
+          src="assets/logo.PNG"
+          class="logo"
+          alt="OASIS Logo"
+          onerror="this.style.display='none'; document.getElementById('brandText').style.display='block';"
+        />
+        <div id="brandText" class="brand__text" style="display:none;">
+          OASIS AIR CLEANER SERVICES LLC
+        </div>
+      </div>
+
+      <div class="topbar__actions">
+        <a class="btn btn--ghost" href="#" id="btnWhatsAppTop">WhatsApp</a>
+        <a class="btn btn--primary"
+           href="https://buy.stripe.com/aFa6oGeMe8KY2fQ6pF1RC09"
+           target="_blank" rel="noopener noreferrer">
+          Pagar y agendar
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero__left">
+        <h1>Depósito $25 → pagas y agendas.</h1>
+        <p class="lead">
+          Para reservar su horario se requiere un <strong>depósito de $25</strong>.
+          Se acredita al total del servicio el día de la visita.
+        </p>
+
+        <div class="cta">
+          <a class="btn btn--primary btn--block"
+             href="https://buy.stripe.com/aFa6oGeMe8KY2fQ6pF1RC09"
+             target="_blank" rel="noopener noreferrer">
+            Pagar depósito $25 y agendar
+          </a>
+          <a class="btn btn--ghost btn--block" href="#" id="btnWhatsApp">
+            Cotizar por WhatsApp
+          </a>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi">
+            <div class="kpi__num">$25</div>
+            <div class="kpi__txt">Depósito</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi__num">Área Metro</div>
+            <div class="kpi__txt">y pueblos limítrofes</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi__num">Auto</div>
+            <div class="kpi__txt">Agenda inmediata</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__right card">
+        <h2 class="card__title">Servicios y precios base</h2>
+        <p class="small muted">El precio final puede variar según BTU, acceso y condición del equipo.</p>
+
+        <div class="price-list">
+          <div class="row">
+            <div>
+              <div class="name">Mantenimiento preventivo</div>
+              <div class="desc">Mini split / WallPack</div>
+            </div>
+            <div class="price">Desde $55</div>
+          </div>
+
+          <div class="row">
+            <div>
+              <div class="name">Mantenimiento profundo</div>
+              <div class="desc">Lavado y desinfección</div>
+            </div>
+            <div class="price">Desde $75</div>
+          </div>
+
+          <div class="row">
+            <div>
+              <div class="name">Diagnóstico / reparación</div>
+              <div class="desc">Evaluación + recomendación</div>
+            </div>
+            <div class="price">Según caso</div>
+          </div>
+
+          <div class="row">
+            <div>
+              <div class="name">Instalación</div>
+              <div class="desc">Ventana / Mini split</div>
+            </div>
+            <div class="price">Cotización</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2 class="card__title">Política del depósito</h2>
+        <ul class="bullets">
+          <li>Depósito requerido: <strong>$25 (no reembolsable)</strong>.</li>
+          <li>Si llegamos y no hay respuesta: <strong>pierde el depósito</strong>.</li>
+          <li>Espera máxima: <strong>15 minutos</strong> → cita cancelada.</li>
+          <li>El depósito se <strong>acredita</strong> al total del servicio.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2 class="card__title">Contacto rápido</h2>
+        <p class="muted">
+          Si necesita orientación, escriba por WhatsApp y envíe: tipo de equipo, BTU (si lo conoce) y ubicación.
+        </p>
+
+        <div class="cta" style="margin-top:12px;">
+          <a class="btn btn--ghost btn--block" href="#" id="btnWAQuick">Escribir por WhatsApp</a>
+          <a class="btn btn--primary btn--block"
+             href="https://buy.stripe.com/aFa6oGeMe8KY2fQ6pF1RC09"
+             target="_blank" rel="noopener noreferrer">
+            Pagar y agendar
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__brand">OASIS AIR CLEANER SERVICES LLC</div>
+      <div class="small muted">© <span id="year"></span> OASIS. Todos los derechos reservados.</div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
