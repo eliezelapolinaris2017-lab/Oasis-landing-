@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OASIS AIR CLEANER SERVICES LLC | Agenda con Depósito</title>
+  <meta name="description" content="Agenda tu cita con OASIS. Depósito $25 para asegurar horario. Servicios HVAC en Puerto Rico." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand">
+        <img src="assets/logo.PNG" class="logo" alt="OASIS Logo"
+          onerror="this.style.display='none'; document.getElementById('brandText').style.display='block';" />
+        <div id="brandText" class="brand__text" style="display:none;">
+          OASIS AIR CLEANER SERVICES LLC
+        </div>
+      </div>
+
+      <div class="topbar__actions">
+        <a class="btn btn--ghost" href="#" id="btnWhatsAppTop">WhatsApp</a>
+        <a class="btn btn--primary" href="#" id="btnPagarTop">Pagar depósito</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero__left">
+        <h1>Agenda tu cita con depósito.</h1>
+        <p class="lead">
+          Para confirmar y asegurar el horario, se requiere un depósito de <strong>$25</strong>.
+          Se descuenta del servicio el día de la visita.
+        </p>
+
+        <div class="cta">
+          <a class="btn btn--primary" href="#" id="btnPagar">Pagar depósito $25</a>
+          <a class="btn btn--ghost" href="#" id="btnWhatsApp">Cotizar por WhatsApp</a>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi">
+            <div class="kpi__num">24/7</div>
+            <div class="kpi__txt">Auto-agenda</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi__num">$25</div>
+            <div class="kpi__txt">Depósito</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi__num">PR</div>
+            <div class="kpi__txt">Servicio local</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__right card">
+        <h2 class="card__title">Servicios y precios base</h2>
+        <p class="muted small">Precios pueden variar según acceso, capacidad (BTU) y condición del equipo.</p>
+
+        <div class="price-list">
+          <div class="row">
+            <div>
+              <div class="name">Mantenimiento preventivo</div>
+              <div class="desc">Mini split / WallPack</div>
+            </div>
+            <div class="price">Desde $55</div>
+          </div>
+
+          <div class="row">
+            <div>
+              <div class="name">Mantenimiento profundo</div>
+              <div class="desc">Lavado y desinfección</div>
+            </div>
+            <div class="price">Desde $75</div>
+          </div>
+
+          <div class="row">
+            <div>
+              <div class="name">Diagnóstico / reparación</div>
+              <div class="desc">Evaluación + recomendación</div>
+            </div>
+            <div class="price">Según caso</div>
+          </div>
+
+          <div class="row">
+            <div>
+              <div class="name">Instalaciones</div>
+              <div class="desc">Ventana / Mini split</div>
+            </div>
+            <div class="price">Cotización</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid2">
+      <div class="card">
+        <h2 class="card__title">Política de depósito</h2>
+        <ul class="bullets">
+          <li>Depósito requerido para reservar: <strong>$25 (no reembolsable)</strong>.</li>
+          <li>Si llegamos y nadie atiende/no contestan: <strong>pierde el depósito</strong>.</li>
+          <li>Espera máxima: <strong>15 minutos</strong> → se cancela la cita.</li>
+          <li>El depósito se <strong>descuenta</strong> del total del servicio.</li>
+        </ul>
+        <div class="note">
+          Esto reduce no-show y protege el horario. Negocio serio, agenda seria.
+        </div>
+      </div>
+
+      <div class="card" id="gateCard">
+        <h2 class="card__title">Paso final: abrir agenda</h2>
+        <p class="muted">
+          Luego de pagar, confirma aquí para habilitar el enlace del calendario.
+        </p>
+
+        <label class="field">
+          <span>Referencia (opcional)</span>
+          <input id="payRef" type="text" placeholder="Ej: nombre del pagador / recibo Stripe" />
+        </label>
+
+        <label class="check">
+          <input id="chkAcepto" type="checkbox" />
+          <span>Confirmo que pagué el depósito de $25 y acepto la política.</span>
+        </label>
+
+        <div class="cta">
+          <button class="btn btn--primary" id="btnUnlock" type="button">Habilitar enlace de agenda</button>
+          <a class="btn btn--ghost" href="#" id="btnPagar2">Pagar ahora</a>
+        </div>
+
+        <div class="divider"></div>
+
+        <a class="btn btn--primary btn--block" id="btnAgenda" href="#" target="_blank" rel="noopener noreferrer" hidden>
+          Abrir calendario para agendar
+        </a>
+
+        <p class="small muted" style="margin-top:10px;">
+          Si prefieres, agenda por WhatsApp y te bloqueamos el horario manualmente.
+        </p>
+
+        <a class="link" href="#" id="btnWAagenda">Agendar por WhatsApp →</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__left">
+        <div class="footer__brand">OASIS AIR CLEANER SERVICES LLC</div>
+        <div class="small muted">Aire acondicionado • Mantenimiento • Reparación • Instalación</div>
+      </div>
+      <div class="footer__right small muted">
+        © <span id="year"></span> OASIS. Todos los derechos reservados.
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
