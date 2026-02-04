@@ -2,7 +2,7 @@
 const WA_NUMBER = "17876643079";
 const WA_BASE = `https://wa.me/${WA_NUMBER}`;
 
-const STRIPE_DEPOSIT_URL = "https://buy.stripe.com/6oU28q5bE0esf2C29p1RC07";
+const STRIPE_DEPOSIT_URL = "https://buy.stripe.com/aFa6oGeMe8KY2fQ6pF1RC09";
 const CONFIRMAFY_URL = "https://confirmafy.com/oasis-services-pr";
 
 // ================== HELPERS ==================
