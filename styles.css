@@ -1,0 +1,175 @@
+:root{
+  --bg:#f5f7fa;
+  --bg2:#e9eef5;
+  --card:#ffffff;
+  --line:#d6dde6;
+
+  --text:#1f2933;
+  --muted:#5b6773;
+
+  /* Colores marca */
+  --primary:#1f4fd8;   /* azul confianza */
+  --primary2:#0ea5e9;  /* azul claro */
+  --danger:#dc2626;    /* rojo acción */
+
+  --radius:16px;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Manrope, system-ui, Arial;
+  background:linear-gradient(180deg,var(--bg),var(--bg2));
+  color:var(--text);
+}
+
+.container{
+  width:min(980px,92vw);
+  margin:auto;
+}
+
+/* Header */
+
+.header{
+  background:#ffffff;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 0;
+}
+
+.logo{height:42px}
+
+/* Hero compacto */
+
+.hero{
+  padding:48px 0 28px;
+}
+
+.hero h1{
+  font-size:32px;
+  margin:0 0 10px;
+  line-height:1.1;
+}
+
+.hero p{
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.6;
+}
+
+/* Badges */
+
+.badge{
+  display:inline-block;
+  background:#e8f1ff;
+  color:#1e40af;
+  border-radius:999px;
+  padding:6px 12px;
+  font-size:13px;
+  font-weight:700;
+}
+
+/* Botones */
+
+.btn{
+  display:inline-block;
+  padding:14px 18px;
+  border-radius:999px;
+  font-weight:800;
+  text-decoration:none;
+  border:1px solid var(--line);
+}
+
+.btn--primary{
+  background:linear-gradient(90deg,var(--primary),var(--primary2));
+  color:#fff;
+  border:none;
+  box-shadow:var(--shadow);
+}
+
+.btn--danger{
+  background:var(--danger);
+  color:#fff;
+  border:none;
+}
+
+.btn--ghost{
+  background:#fff;
+}
+
+/* Cards */
+
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+
+/* Precios — foco venta */
+
+.price-card{
+  border-left:6px solid var(--primary);
+  margin-bottom:14px;
+}
+
+.price-card h3{
+  margin:0 0 6px;
+  font-size:18px;
+}
+
+.price{
+  font-size:22px;
+  font-weight:900;
+  color:var(--primary);
+}
+
+/* Pasos */
+
+.steps{
+  display:grid;
+  gap:10px;
+}
+
+.step{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:14px;
+}
+
+/* Avisos */
+
+.notice{
+  background:#fff7ed;
+  border:1px solid #fed7aa;
+  border-radius:14px;
+  padding:14px;
+  color:#9a3412;
+  font-weight:600;
+}
+
+/* Footer */
+
+.footer{
+  padding:28px 0;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* Responsive */
+
+@media(max-width:720px){
+  .hero h1{font-size:26px}
+}
