@@ -367,3 +367,105 @@ h1{
   .hero__center{text-align:left}
   .hero__actions{justify-content:flex-start}
 }
+/* ==========================
+   MOBILE UPGRADE (sin romper desktop)
+   Pega esto AL FINAL del styles.css
+   ========================== */
+
+/* 1) Ajuste global para que el fondo se vea “premium” en móvil */
+@media (max-width: 720px){
+  body{
+    background:
+      radial-gradient(700px 520px at 60% 0%, rgba(56,189,248,.22), transparent 60%),
+      radial-gradient(700px 520px at 0% 30%, rgba(34,211,238,.14), transparent 62%),
+      linear-gradient(180deg, #0a1220, #070c14 55%, #060a12);
+  }
+}
+
+/* 2) Hero más compacto y con foco (menos aire vacío) */
+@media (max-width: 720px){
+  .hero{ padding: 26px 0 18px; }
+  .hero__bg{
+    background:
+      radial-gradient(520px 360px at 55% 10%, rgba(56,189,248,.18), transparent 62%),
+      radial-gradient(520px 360px at 0% 35%, rgba(239,68,68,.10), transparent 65%);
+  }
+  h1{
+    font-size: clamp(28px, 7.6vw, 40px);
+    line-height: 1.05;
+    margin: 12px 0 10px;
+  }
+  .sub{ font-size: 14px; line-height: 1.6; }
+}
+
+/* 3) La tarjeta principal (glass) debe ocupar bien el ancho y verse más “fuerte” */
+@media (max-width: 720px){
+  .glass{
+    background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+    border-color: rgba(255,255,255,.14);
+  }
+  .card{ padding: 14px; }
+}
+
+/* 4) Botones: en móvil, full-width y con mejor “tap area” */
+@media (max-width: 720px){
+  .cta-row{ gap: 10px; }
+  .btn{
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+  .btn--primary{
+    box-shadow: 0 16px 50px rgba(56,189,248,.22);
+  }
+}
+
+/* 5) KPIs / “Proceso – Confirmación – Soporte” en móvil en 1 columna, más legibles */
+@media (max-width: 720px){
+  .card__bottom{
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .kpi{
+    padding: 12px;
+    border-radius: 16px;
+    background: rgba(0,0,0,.28);
+  }
+  .kpi strong{ font-size: 12px; }
+  .kpi span{ font-size: 14px; }
+}
+
+/* 6) Floating: que no “estorbe” ni se vea fuera de sitio */
+@media (max-width: 720px){
+  .floating{
+    margin-top: 12px;
+    border-radius: 16px;
+    padding: 10px 12px;
+  }
+}
+
+/* 7) Secciones: menos padding en móvil para que se sienta “compacto” */
+@media (max-width: 720px){
+  .section{ padding: 36px 0; }
+  .section__head p{ font-size: 14px; }
+}
+
+/* 8) Navbar: más limpia en móvil */
+@media (max-width: 720px){
+  .header{
+    background: rgba(0,0,0,.60);
+    backdrop-filter: blur(16px);
+  }
+  .nav{ padding: 12px 0; }
+  .logo{ height: 30px; }
+}
+
+/* 9) WhatsApp floating button: que se vea “corporativo” */
+@media (max-width: 720px){
+  .wa-float{
+    right: 14px;
+    bottom: 14px;
+    background: rgba(56,189,248,.12);
+    border-color: rgba(56,189,248,.28);
+  }
+}
