@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>OASIS AIR CLEANER SERVICES LLC | Reserva</title>
+  <meta name="description" content="Reserva tu cita con OASIS. Depósito $25 para asegurar horario. Área metro y pueblos limítrofes."/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container topbar__inner">
+    <div class="brand">
+      <img class="logo" src="assets/logo.png" alt="OASIS Logo"
+           onerror="this.style.display='none';document.getElementById('brandFallback').style.display='block';">
+      <div id="brandFallback" class="brand__fallback" style="display:none;">
+        OASIS AIR CLEANER SERVICES LLC
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="#precios">Precios</a>
+      <a href="#politica">Política</a>
+      <a href="#trabajos">Trabajos</a>
+      <a class="btn btn--primary" id="btnStripeTop" href="#" target="_blank" rel="noopener noreferrer">
+        Reservar ($25)
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO estilo referencia: oscuro, abierto, centrado -->
+  <section class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__shade" aria-hidden="true"></div>
+    <div class="hero__diag" aria-hidden="true"></div>
+
+    <div class="container hero__content">
+      <div class="hero__center">
+        <div class="chip">📍 Área metro + pueblos limítrofes</div>
+
+        <h1>Reserva tu servicio de aire acondicionado</h1>
+
+        <p class="sub">
+          Para asegurar tu espacio y horario, se requiere un <strong>depósito de $25</strong>.
+          <span>Se acredita al total del servicio.</span>
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" id="btnStripeHero" href="#" target="_blank" rel="noopener noreferrer">
+            Reservar cita ($25)
+          </a>
+
+          <a class="btn btn--ghost btn--lg" id="btnVideoHero" href="#" target="_blank" rel="noopener noreferrer">
+            ▶ Ver mantenimiento real
+          </a>
+        </div>
+
+        <div class="minirow">
+          <div class="mini">
+            <div class="mini__k">Proceso</div>
+            <div class="mini__v">Pagar → Agendar</div>
+          </div>
+          <div class="mini">
+            <div class="mini__k">Confirmación</div>
+            <div class="mini__v">Automática</div>
+          </div>
+          <div class="mini">
+            <div class="mini__k">Soporte</div>
+            <a class="mini__v link" href="#" id="waSupport">WhatsApp</a>
+          </div>
+        </div>
+
+        <p class="note">
+          El depósito es para proteger tu horario. No es “pago por pagar”.
+        </p>
+      </div>
+    </div>
+
+    <a class="scrollhint" href="#precios" aria-label="Bajar">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- INFO COMPACTA -->
+  <section class="section" id="precios">
+    <div class="container section__head">
+      <h2>Servicios y precios base</h2>
+      <p>Precios base sujetos a ubicación, acceso, BTU y condición del equipo.</p>
+    </div>
+
+    <div class="container grid">
+      <article class="card">
+        <div class="row">
+          <div>
+            <div class="t">Mantenimiento preventivo</div>
+            <div class="s">Mini split / WallPack</div>
+          </div>
+          <div class="pillprice">$55+</div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="t">Mantenimiento profundo</div>
+            <div class="s">Lavado completo</div>
+          </div>
+          <div class="pillprice">$75+</div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="t">Diagnóstico / Reparación</div>
+            <div class="s">Evaluación técnica</div>
+          </div>
+          <div class="pillprice">Cotiza</div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="t">Instalaciones</div>
+            <div class="s">Ventana / Mini split</div>
+          </div>
+          <div class="pillprice">Cotiza</div>
+        </div>
+      </article>
+
+      <article class="card" id="politica">
+        <h3>Política de reserva</h3>
+        <ul class="bullets">
+          <li>Depósito <strong>$25 no reembolsable</strong>.</li>
+          <li>Si llegamos y no atienden / no responden → se pierde.</li>
+          <li><strong>15 minutos</strong> de espera máximo → cita cancelada.</li>
+          <li>El depósito se <strong>descuenta</strong> del servicio.</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <div class="cta2">
+          <a class="btn btn--ghost" href="#" id="waSupport2">💬 Dudas por WhatsApp</a>
+          <a class="btn btn--primary" href="#" id="btnStripePolicy" target="_blank" rel="noopener noreferrer">Reservar ($25)</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="trabajos">
+    <div class="container proof">
+      <div>
+        <h3>Trabajos realizados</h3>
+        <p>Verificación visual. Aquí se ve cómo trabajamos, sin cuentos.</p>
+      </div>
+      <a class="btn btn--ghost" id="btnVideo2" href="#" target="_blank" rel="noopener noreferrer">▶ Ver video</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="foot__brand">OASIS AIR CLEANER SERVICES LLC</div>
+      <div class="foot__mini">© <span id="year"></span> • Área metro y pueblos limítrofes</div>
+    </div>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
