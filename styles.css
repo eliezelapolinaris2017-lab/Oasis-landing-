@@ -1,24 +1,23 @@
 :root{
-  --ink:#eaf2ff;
-  --muted:rgba(234,242,255,.74);
+  --ink:#eef6ff;
+  --muted:rgba(238,246,255,.72);
 
-  --brand:#2b6cff;
-  --brand2:#38bdf8;
+  --line:rgba(255,255,255,.16);
+  --line2:rgba(255,255,255,.10);
 
-  /* Fondo base serio pero vivo */
-  --bg1:#071022;
-  --bg2:#060a12;
+  --brand:#2b6cff;      /* azul serio */
+  --brand2:#38bdf8;     /* acento */
 
-  /* Tarjetas oscuras PRO */
-  --glass1:rgba(3,8,16,.90);
-  --glass2:rgba(3,8,16,.82);
-  --glassBorder:rgba(255,255,255,.14);
+  --bg:#070b12;         /* base */
+  --card:rgba(10,14,24,.72);
 
-  --line:rgba(255,255,255,.14);
-  --line2:rgba(255,255,255,.08);
-
-  --shadow:0 26px 70px rgba(0,0,0,.55);
+  --shadow:0 22px 70px rgba(0,0,0,.55);
+  --shadow2:0 14px 40px rgba(0,0,0,.45);
   --r:18px;
+
+  --cardSolid: rgba(6,10,18,.78);     /* tarjetas más oscuras */
+  --cardSolid2: rgba(6,10,18,.64);    /* subtarjetas */
+  --glass: rgba(255,255,255,.06);
 }
 
 *{box-sizing:border-box}
@@ -27,44 +26,59 @@ body{
   margin:0;
   font-family:Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color:var(--ink);
-
-  /* Base general (serio, con vida sutil) */
-  background:
-    radial-gradient(1100px 720px at 70% 0%, rgba(56,189,248,.22), transparent 58%),
-    radial-gradient(1000px 640px at 0% 35%, rgba(43,108,255,.18), transparent 60%),
-    linear-gradient(180deg, var(--bg1), var(--bg2));
+  background: radial-gradient(1200px 800px at 70% 0%, rgba(56,189,248,.18), transparent 60%),
+              radial-gradient(1200px 800px at 0% 40%, rgba(43,108,255,.14), transparent 62%),
+              linear-gradient(180deg, #070b12, #060a11);
 }
 
-a{color:inherit; text-decoration:none}
-.container{width:min(1120px, 92vw); margin-inline:auto}
+a{color:inherit;text-decoration:none}
+.container{width:min(1080px, 92vw); margin-inline:auto}
 
-/* ===== TOPBAR ===== */
+/* ===== Topbar ===== */
 .topbar{
-  position:fixed; top:0; left:0; right:0;
+  position:fixed;
+  top:0; left:0; right:0;
   z-index:50;
-  background:rgba(6,10,18,.55);
+  background:rgba(7,11,18,.58);
   backdrop-filter: blur(14px);
   border-bottom:1px solid var(--line2);
 }
 .topbar__inner{
-  display:flex; align-items:center; justify-content:space-between;
-  gap:14px; padding:12px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:12px 0;
 }
-.brand{display:flex; align-items:center; gap:10px; min-width:0}
-.logo{height:34px; width:auto}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+.logo{height:34px;width:auto}
 .brand__fallback{
   font-weight:900;
   letter-spacing:.02em;
   font-size:12px;
   white-space:nowrap;
-  overflow:hidden; text-overflow:ellipsis;
+  overflow:hidden;
+  text-overflow:ellipsis;
   opacity:.9;
 }
-.nav{display:flex; align-items:center; gap:14px}
-.nav a{font-weight:800; opacity:.86; font-size:13px}
+.nav{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.nav a{
+  font-weight:800;
+  opacity:.86;
+  font-size:13px;
+}
 .nav a:hover{opacity:1}
 
-/* ===== BUTTONS ===== */
+/* ===== Buttons ===== */
 .btn{
   border:1px solid var(--line);
   background:rgba(255,255,255,.06);
@@ -74,15 +88,22 @@ a{color:inherit; text-decoration:none}
   font-weight:900;
   letter-spacing:.01em;
   transition:.15s ease;
-  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  box-shadow:none;
 }
 .btn:hover{transform: translateY(-1px)}
+.btn:active{transform: translateY(0px)}
 .btn--primary{
   border:none;
   background:linear-gradient(90deg, var(--brand), var(--brand2));
-  box-shadow:0 18px 40px rgba(43,108,255,.22);
+  box-shadow:0 16px 44px rgba(43,108,255,.22);
 }
-.btn--ghost{background:rgba(255,255,255,.05)}
+.btn--ghost{
+  background:rgba(255,255,255,.05);
+}
 .btn--lg{padding:12px 18px; font-size:14px}
 
 /* ===== HERO ===== */
@@ -92,93 +113,70 @@ a{color:inherit; text-decoration:none}
   display:grid;
   align-items:center;
   overflow:hidden;
-  padding-top:70px;
+  padding-top:70px; /* espacio topbar */
 }
 
-/* Imagen real del hero */
+/* Fondo vivo: NO lo apagues */
 .hero__bg{
-  position:absolute; inset:0;
-  background:url("assets/hero-bg.jpg") center/cover no-repeat;
+  position:absolute;
+  inset:0;
+  background: url("assets/hero-bg.jpg") center/cover no-repeat;
   transform: scale(1.03);
-
-  /* MÁS VIVO */
-  filter: saturate(1.18) contrast(1.08) brightness(1.08);
+  filter: saturate(1.18) contrast(1.06) brightness(1.12);
 }
 
-/* Overlay para contraste, sin matar el fondo */
+/* Tinte sutil corporativo: deja ver el branding */
 .hero__shade{
-  position:absolute; inset:0;
+  position:absolute;
+  inset:0;
   background:
-    radial-gradient(1100px 680px at 72% 6%, rgba(56,189,248,.26), transparent 60%),
-    radial-gradient(1000px 700px at 0% 60%, rgba(239,68,68,.18), transparent 62%),
-    linear-gradient(180deg, rgba(6,10,18,.34), rgba(6,10,18,.56));
+    radial-gradient(1100px 720px at 18% 16%, rgba(43,108,255,.14), transparent 60%),
+    radial-gradient(1100px 720px at 88% 10%, rgba(56,189,248,.16), transparent 62%),
+    radial-gradient(1000px 820px at 0% 88%, rgba(239,68,68,.10), transparent 58%),
+    linear-gradient(180deg, rgba(6,16,33,.18), rgba(6,16,33,.38));
 }
 
-/* Layout: centro + panel derecho */
-.hero__grid{
-  position:relative;
-  display:grid;
-  grid-template-columns: 1fr 340px;
-  gap:16px;
-  align-items:center;
-}
-
-/* ===== GLASS / ANTI-MANCHAS =====
-   Esto evita que las tarjetas se vean “sucias” por el rojo/azul del fondo */
-.hero__center,
-.card,
-.mini,
-.proof,
-.sidebuy,
-.sitem{
-  position:relative;
-  overflow:hidden;
-}
-
-.hero__center::before,
-.card::before,
-.mini::before,
-.proof::before,
-.sidebuy::before,
-.sitem::before{
-  content:"";
-  position:absolute; inset:0;
-  /* Oscurece uniforme y neutraliza tintes */
-  background:linear-gradient(180deg, rgba(0,0,0,.26), rgba(0,0,0,.52));
+/* Diagonal MUY suave para look “referencia” sin tapar arte */
+.hero__diag{
+  position:absolute;
+  inset:-25% -35% -25% -35%;
+  background: linear-gradient(115deg,
+    rgba(6,16,33,.46) 0%,
+    rgba(6,16,33,.46) 44%,
+    rgba(43,108,255,.08) 68%,
+    rgba(56,189,248,.05) 100%);
+  transform: rotate(-8deg);
   pointer-events:none;
-  z-index:0;
 }
 
-.hero__center > *,
-.card > *,
-.mini > *,
-.proof > *,
-.sidebuy > *,
-.sitem > *{
+.hero__content{
   position:relative;
-  z-index:1;
+  display:flex;
+  justify-content:center;
 }
 
-/* ===== CARD PRINCIPAL ===== */
 .hero__center{
-  text-align:left;
+  width:min(900px, 100%);
+  text-align:center;
   padding:22px 18px;
-  border-radius:calc(var(--r) + 6px);
-  background:linear-gradient(180deg, var(--glass1), var(--glass2));
-  border:1px solid var(--glassBorder);
+  border-radius:calc(var(--r) + 8px);
+  background: linear-gradient(180deg, rgba(6,10,18,.72), rgba(6,10,18,.62));
+  border:1px solid rgba(255,255,255,.14);
   box-shadow:var(--shadow);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
 }
 
 .chip{
-  display:inline-flex; align-items:center; gap:10px;
-  border:1px solid rgba(255,255,255,.14);
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  border:1px solid rgba(255,255,255,.16);
   background:rgba(255,255,255,.06);
   padding:8px 12px;
   border-radius:999px;
   font-weight:900;
   font-size:12px;
-  color:rgba(234,242,255,.88);
+  color:rgba(238,246,255,.90);
 }
 
 h1{
@@ -189,8 +187,8 @@ h1{
 }
 
 .sub{
-  margin:0;
-  max-width:740px;
+  margin:0 auto;
+  max-width:760px;
   color:var(--muted);
   line-height:1.7;
   font-size:15px;
@@ -200,36 +198,35 @@ h1{
 .hero__actions{
   margin-top:16px;
   display:flex;
+  justify-content:center;
   gap:12px;
   flex-wrap:wrap;
 }
 
+/* Mini KPIs (oscuro premium) */
 .minirow{
   margin-top:16px;
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   gap:10px;
 }
-
 .mini{
   border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.04);
+  background: linear-gradient(180deg, rgba(6,10,18,.72), rgba(6,10,18,.58));
   border-radius:14px;
   padding:12px 12px;
-  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow2);
 }
-
 .mini__k{
   font-size:12px;
-  color:rgba(234,242,255,.65);
+  color:rgba(238,246,255,.62);
   font-weight:800;
 }
-
 .mini__v{
-  margin-top:4px;
+  margin-top:2px;
   font-weight:900;
+  color:rgba(238,246,255,.92);
 }
-
 .link{
   color:#8bd3ff;
   text-decoration:underline;
@@ -238,121 +235,11 @@ h1{
 
 .note{
   margin:12px 0 0;
-  color:rgba(234,242,255,.60);
+  color:rgba(238,246,255,.58);
   font-size:12px;
 }
 
-/* ===== Panel derecho (Servicios pago completo) ===== */
-.sidebuy{
-  border-radius:calc(var(--r) + 6px);
-  background:linear-gradient(180deg, var(--glass1), var(--glass2));
-  border:1px solid rgba(255,255,255,.14);
-  box-shadow:var(--shadow);
-  backdrop-filter: blur(12px);
-  padding:14px;
-}
-
-.sidebuy__head{
-  margin-bottom:10px;
-}
-.sidebuy__t{
-  font-weight:900;
-  letter-spacing:-.01em;
-}
-.sidebuy__s{
-  margin-top:4px;
-  font-size:12px;
-  color:rgba(234,242,255,.66);
-  line-height:1.35;
-}
-
-.sitem{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  padding:10px 10px;
-  border-radius:14px;
-
-  /* Oscuras y consistentes */
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.12);
-  margin-top:10px;
-
-  transition: transform .15s ease, background .15s ease, border-color .15s ease;
-}
-
-.sitem:hover{
-  transform: translateY(-1px);
-  background:rgba(255,255,255,.06);
-  border-color:rgba(255,255,255,.18);
-}
-
-.sitem__l{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  min-width:0;
-}
-
-.ico{
-  width:34px;
-  height:34px;
-  display:grid;
-  place-items:center;
-  border-radius:12px;
-  background:rgba(56,189,248,.10);
-  border:1px solid rgba(56,189,248,.18);
-  font-size:16px;
-  flex:0 0 auto;
-}
-
-.sitem__t{
-  font-weight:900;
-  font-size:13px;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  max-width: 190px;
-}
-.sitem__s{
-  margin-top:2px;
-  font-size:12px;
-  color:rgba(234,242,255,.62);
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  max-width: 190px;
-}
-.sitem__r{
-  font-weight:900;
-  font-size:13px;
-  color:rgba(234,242,255,.88);
-  padding:8px 10px;
-  border-radius:999px;
-  background:rgba(43,108,255,.12);
-  border:1px solid rgba(43,108,255,.22);
-  flex:0 0 auto;
-}
-
-.sidebuy__foot{
-  margin-top:12px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  font-size:12px;
-  color:rgba(234,242,255,.62);
-  border-top:1px solid rgba(255,255,255,.10);
-  padding-top:10px;
-}
-.sidebuy__foot a{
-  color:#8bd3ff;
-  text-decoration:underline;
-  text-underline-offset:2px;
-}
-
-/* ===== scroll hint ===== */
+/* scroll hint */
 .scrollhint{
   position:absolute;
   left:50%;
@@ -379,21 +266,18 @@ h1{
   100%{transform: translateY(-10px); opacity:.6}
 }
 
-/* ===== Sections below ===== */
+/* ===== Sections ===== */
 .section{
   padding:42px 0;
   background:
     radial-gradient(900px 520px at 10% 0%, rgba(43,108,255,.10), transparent 60%),
-    linear-gradient(180deg, rgba(6,10,18,.78), rgba(6,10,18,.92));
+    linear-gradient(180deg, rgba(7,11,18,.92), rgba(7,11,18,.98));
   border-top:1px solid rgba(255,255,255,.06);
 }
-.section__head h2{
-  margin:0;
-  font-size:22px;
-}
+.section__head h2{margin:0; font-size:22px}
 .section__head p{
   margin:8px 0 0;
-  color:rgba(234,242,255,.68);
+  color:rgba(238,246,255,.70);
   line-height:1.6;
 }
 
@@ -405,10 +289,10 @@ h1{
 }
 
 .card{
-  background:linear-gradient(180deg, var(--glass1), var(--glass2));
-  border:1px solid rgba(255,255,255,.12);
+  background: linear-gradient(180deg, rgba(6,10,18,.78), rgba(6,10,18,.62));
+  border:1px solid rgba(255,255,255,.14);
   border-radius:var(--r);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow2);
   padding:16px;
   backdrop-filter: blur(12px);
 }
@@ -419,22 +303,18 @@ h1{
   justify-content:space-between;
   gap:12px;
   padding:12px 0;
-  border-bottom:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.10);
 }
 .row:last-child{border-bottom:none}
 
 .t{font-weight:900}
-.s{
-  color:rgba(234,242,255,.65);
-  font-size:12px;
-  margin-top:4px
-}
+.s{color:rgba(238,246,255,.64); font-size:12px; margin-top:4px}
 
 .pillprice{
   font-weight:900;
   padding:6px 10px;
   border-radius:999px;
-  border:1px solid rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.14);
   background:rgba(255,255,255,.06);
   white-space:nowrap;
 }
@@ -443,12 +323,12 @@ h1{
 .bullets{
   margin:0;
   padding-left:18px;
-  color:rgba(234,242,255,.72);
+  color:rgba(238,246,255,.72);
   line-height:1.7;
 }
 .divider{
   height:1px;
-  background:rgba(255,255,255,.10);
+  background:rgba(255,255,255,.12);
   margin:14px 0;
 }
 .cta2{
@@ -457,30 +337,26 @@ h1{
   flex-wrap:wrap;
 }
 
+/* Trabajos */
 .proof{
   display:flex;
   justify-content:space-between;
   align-items:center;
   gap:12px;
   flex-wrap:wrap;
-  background:linear-gradient(180deg, var(--glass1), var(--glass2));
-  border:1px solid rgba(255,255,255,.12);
+  background: linear-gradient(180deg, rgba(6,10,18,.66), rgba(6,10,18,.52));
+  border:1px solid rgba(255,255,255,.14);
   border-radius:var(--r);
   padding:16px;
-  box-shadow:var(--shadow);
-  backdrop-filter: blur(12px);
+  box-shadow:var(--shadow2);
 }
-
 .proof h3{margin:0}
-.proof p{
-  margin:6px 0 0;
-  color:rgba(234,242,255,.68);
-  line-height:1.6
-}
+.proof p{margin:6px 0 0; color:rgba(238,246,255,.68); line-height:1.6}
 
+/* Footer */
 .footer{
   border-top:1px solid rgba(255,255,255,.06);
-  background:rgba(6,10,18,.92);
+  background:rgba(7,11,18,.98);
 }
 .footer__inner{
   display:flex;
@@ -491,209 +367,114 @@ h1{
   padding:18px 0 24px;
 }
 .foot__brand{font-weight:900}
-.foot__mini{color:rgba(234,242,255,.55); font-size:12px}
+.foot__mini{color:rgba(238,246,255,.55); font-size:12px}
+
+/* ====== Side Panel: Servicios (pago completo) ======
+   Si tu HTML tiene algo como .sidepanel o #sidePanel,
+   estos estilos lo dejan “corporativo” y pequeño.
+*/
+.sidepanel{
+  position:fixed;
+  right:18px;
+  top:110px;
+  width:260px;
+  z-index:45;
+  border-radius:16px;
+  background: linear-gradient(180deg, rgba(6,10,18,.80), rgba(6,10,18,.66));
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow: var(--shadow2);
+  backdrop-filter: blur(10px);
+  padding:12px;
+}
+.sidepanel__title{
+  font-weight:900;
+  font-size:13px;
+  opacity:.95;
+}
+.sidepanel__sub{
+  margin-top:4px;
+  font-size:12px;
+  color:rgba(238,246,255,.62);
+  line-height:1.35;
+}
+.sidepanel__list{
+  margin-top:10px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.sidepanel__item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 10px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.05);
+}
+.sidepanel__item strong{
+  display:block;
+  font-size:12px;
+  font-weight:900;
+  line-height:1.15;
+}
+.sidepanel__item span{
+  display:block;
+  font-size:11px;
+  color:rgba(238,246,255,.62);
+  margin-top:2px;
+}
+.sidepanel__buy{
+  padding:8px 10px;
+  border-radius:999px;
+  font-weight:900;
+  font-size:12px;
+  border:none;
+  background:linear-gradient(90deg, var(--brand), var(--brand2));
+  color:var(--ink);
+  white-space:nowrap;
+  box-shadow:0 14px 34px rgba(43,108,255,.22);
+}
+.sidepanel__meta{
+  margin-top:10px;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  font-size:11px;
+  color:rgba(238,246,255,.58);
+}
+.sidepanel__meta a{
+  color:#8bd3ff;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
 
 /* ===== Responsive ===== */
 @media (max-width: 980px){
   .nav a{display:none}
-
-  /* Panel derecho baja abajo */
-  .hero__grid{grid-template-columns:1fr; gap:12px}
-
+  .grid{grid-template-columns:1fr}
   .minirow{grid-template-columns:1fr}
   .hero__center{text-align:left}
   .hero__actions{justify-content:flex-start}
+  .sidepanel{display:none} /* en tablet/móvil no estorba */
 }
 
-/* Mobile: botones full-width y padding compacto */
 @media (max-width: 720px){
-  .hero{padding-top:64px}
-  .hero__center{padding:18px 14px}
-  .sidebuy{padding:12px}
-
-  .btn{
-    width:100%;
-    padding:14px 16px;
-    font-size:15px;
+  .hero{
+    padding-top:64px;
+    min-height: calc(100vh - 0px);
   }
-  .btn--primary{
-    box-shadow:0 16px 50px rgba(56,189,248,.22);
+  h1{
+    font-size: clamp(28px, 7.6vw, 40px);
+    line-height: 1.05;
   }
-  .hero__actions{gap:10px}
-
-  .section{padding:36px 0}
-  .section__head p{font-size:14px}
-}
-/* ============================
-   FIX: volver a “panel derecho”
-   + tarjetas PRO (sin matar el fondo)
-   Pegar AL FINAL del styles.css
-   ============================ */
-
-/* 1) Mantén el fondo vivo y visible */
-.hero__bg{
-  filter: saturate(1.18) contrast(1.06) brightness(1.10) !important;
-}
-.hero__shade{
-  background:
-    radial-gradient(1100px 680px at 72% 6%, rgba(56,189,248,.20), transparent 62%),
-    radial-gradient(1000px 700px at 0% 60%, rgba(239,68,68,.14), transparent 64%),
-    linear-gradient(180deg, rgba(6,10,18,.28), rgba(6,10,18,.44)) !important;
-}
-
-/* 2) Re-centrar la tarjeta principal como antes */
-.hero__content{
-  display:flex !important;
-  justify-content:center !important;
-}
-.hero__center{
-  width:min(860px, 100%) !important;
-  text-align:center !important;
-}
-
-/* 3) Tarjetas: oscuras “premium”, no “apagón” */
-.hero__center,
-.card,
-.mini,
-.proof{
-  background: linear-gradient(180deg, rgba(10,16,28,.78), rgba(8,12,22,.72)) !important;
-  border: 1px solid rgba(255,255,255,.14) !important;
-  box-shadow: 0 22px 60px rgba(0,0,0,.48) !important;
-}
-
-/* Quitar la capa negra extra que estaba ensuciando */
-.hero__center::before,
-.card::before,
-.mini::before,
-.proof::before{
-  background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.18)) !important;
-}
-
-/* 4) Panel derecho “pequeño” fijo a la derecha (no lista abajo) */
-.sidebuy{
-  position: absolute !important;
-  right: clamp(18px, 3.2vw, 38px) !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-
-  width: 280px !important;           /* pequeño */
-  padding: 12px !important;
-  border-radius: 18px !important;
-
-  background: linear-gradient(180deg, rgba(10,16,28,.78), rgba(8,12,22,.72)) !important;
-  border: 1px solid rgba(255,255,255,.14) !important;
-  box-shadow: 0 22px 60px rgba(0,0,0,.48) !important;
-  backdrop-filter: blur(12px) !important;
-}
-
-/* Items del panel derecho */
-.sitem{
-  background: rgba(255,255,255,.05) !important;
-  border: 1px solid rgba(255,255,255,.12) !important;
-}
-.sitem:hover{
-  background: rgba(255,255,255,.07) !important;
-  border-color: rgba(255,255,255,.18) !important;
-}
-
-/* 5) Asegura que el panel derecho no tape la tarjeta principal */
-@media (min-width: 1024px){
+  .sub{ font-size:14px; line-height:1.6 }
+  .btn{ width:100%; padding:14px 16px; font-size:15px }
+  .btn--lg{ width:100% }
+  .hero__actions{ gap:10px }
   .hero__center{
-    max-width: 760px !important; /* deja espacio al panel */
-  }
-}
-
-/* 6) En móvil: el panel derecho baja abajo (como debe ser) */
-@media (max-width: 980px){
-  .sidebuy{
-    position: static !important;
-    transform: none !important;
-    width: 100% !important;
-    margin-top: 12px !important;
-  }
-  .hero__center{
-    text-align:left !important;
-    max-width: 100% !important;
-  }
-  .hero__actions{ justify-content:flex-start !important; }
-}
-/* ============================
-   FIX #2: NO separar layout + letras PRO
-   Pegar AL FINAL del styles.css
-   ============================ */
-
-/* Tipografía: que se vea fina y limpia */
-html, body{
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: geometricPrecision;
-}
-body{ font-weight: 500; }
-h1{ font-weight: 800 !important; letter-spacing: -0.02em !important; }
-.sub{ font-weight: 500 !important; }
-.nav a{ font-weight: 800 !important; }
-
-/* Hero: NO recortar la tarjeta por el panel */
-@media (min-width: 1024px){
-  .hero__center{
-    max-width: 900px !important;     /* vuelve “grande” como antes */
-    width: min(900px, 100%) !important;
-  }
-
-  /* El panel derecho se pega a la derecha sin “robar” layout */
-  .sidebuy{
-    right: 22px !important;
-    top: 52% !important;
-    transform: translateY(-50%) !important;
-    width: 300px !important;
-  }
-}
-
-/* Panel: texto más legible y elegante */
-.sidebuy{
-  font-size: 13px !important;
-}
-.sidebuy h3,
-.sidebuy .title{
-  font-weight: 900 !important;
-  letter-spacing: -0.01em !important;
-}
-.sitem{
-  padding: 10px 10px !important;
-}
-.sitem .name{
-  font-weight: 800 !important;
-}
-.sitem .meta{
-  font-weight: 600 !important;
-  opacity: .78 !important;
-}
-
-/* Botones: que no se vean “inflados” */
-.btn{
-  font-weight: 900 !important;
-  letter-spacing: .01em !important;
-}
-.btn--primary{
-  box-shadow: 0 16px 44px rgba(43,108,255,.20) !important;
-}
-
-/* Tarjetas: oscuras premium, pero NO “plomo” */
-.hero__center,
-.sidebuy{
-  background: linear-gradient(180deg, rgba(8,12,20,.78), rgba(8,12,20,.62)) !important;
-  border: 1px solid rgba(255,255,255,.16) !important;
-}
-
-/* En móvil, todo normal (panel baja) */
-@media (max-width: 980px){
-  .sidebuy{
-    position: static !important;
-    transform: none !important;
-    width: 100% !important;
-    margin-top: 12px !important;
-  }
-  .hero__center{
-    max-width: 100% !important;
+    padding:18px 16px;
+    background: linear-gradient(180deg, rgba(6,10,18,.78), rgba(6,10,18,.66));
   }
 }
