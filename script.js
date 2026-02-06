@@ -1,49 +1,55 @@
 const CONFIG = {
   // Depósito (reserva)
-  stripeReserve25: "https://buy.stripe.com/aFa6oGeMe8KY2fQ6pF1RC09",
+  stripeDepositLink: "https://buy.stripe.com/aFa6oGeMe8KY2fQ6pF1RC09",
 
-  // Servicios pago completo (los 4 que me diste)
-  stripePreventivo: "https://buy.stripe.com/cNi7sK33waT65s201h1RC0a",
-  stripeProfundo:   "https://buy.stripe.com/8x26oG7jM4uI7Aa6pF1RC0b",
-  stripeDiagnostico:"https://buy.stripe.com/fZueVc0VobXa6w6dS71RC0c",
-  stripeCotizacion: "https://buy.stripe.com/8x2dR87jMgdq3jU9BR1RC0d",
+  // Servicios (pago completo)
+  services: {
+    preventivo: "https://buy.stripe.com/cNi7sK33waT65s201h1RC0a",
+    profundo:   "https://buy.stripe.com/8x26oG7jM4uI7Aa6pF1RC0b",
+    diagnostico:"https://buy.stripe.com/fZueVc0VobXa6w6dS71RC0c",
+    cotizacion: "https://buy.stripe.com/8x2dR87jMgdq3jU9BR1RC0d",
+  },
 
+  // Contacto
   whatsappNumber: "17876643079",
-  whatsappMsg: "Hola OASIS 👋 Tengo una pregunta. Área/BTU/Marca:",
+  whatsappMsg: "Hola OASIS 👋 Tengo una pregunta antes de reservar. Área / BTU / Marca:",
+
+  // Prueba social
   videoLink: "https://www.instagram.com/reel/DMREjmoPNvg/?igsh=ZmY3cGZ6cmhuMm9q"
 };
 
-const $ = (id)=>document.getElementById(id);
-
-function openWA(msg){
-  const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg || CONFIG.whatsappMsg)}`;
-  window.open(url, "_blank", "noopener,noreferrer");
-}
+const $ = (id) => document.getElementById(id);
 
 function setHref(id, href){
   const el = $(id);
   if(el) el.setAttribute("href", href);
 }
 
-// Reserva $25
-setHref("btnStripeTop", CONFIG.stripeReserve25);
-setHref("btnStripeHero", CONFIG.stripeReserve25);
-setHref("btnStripePolicy", CONFIG.stripeReserve25);
+function openWA(msg){
+  const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg || CONFIG.whatsappMsg)}`;
+  window.open(url, "_blank", "noopener,noreferrer");
+}
 
-// Video
+/* Depósito */
+setHref("btnStripeTop", CONFIG.stripeDepositLink);
+setHref("btnStripeHero", CONFIG.stripeDepositLink);
+setHref("btnStripePolicy", CONFIG.stripeDepositLink);
+
+/* Video */
 setHref("btnVideoHero", CONFIG.videoLink);
 setHref("btnVideo2", CONFIG.videoLink);
 
-// WhatsApp
+/* WhatsApp */
 $("waSupport")?.addEventListener("click", (e)=>{ e.preventDefault(); openWA(); });
 $("waSupport2")?.addEventListener("click", (e)=>{ e.preventDefault(); openWA(); });
+$("waSupportSide")?.addEventListener("click", (e)=>{ e.preventDefault(); openWA("Hola OASIS 👋 Estoy viendo los servicios de pago completo. Necesito ayuda con:"); });
 
-// Servicios pago completo (derecha)
-setHref("buyPreventivo", CONFIG.stripePreventivo);
-setHref("buyProfundo", CONFIG.stripeProfundo);
-setHref("buyDiagnostico", CONFIG.stripeDiagnostico);
-setHref("buyCotizacion", CONFIG.stripeCotizacion);
+/* Servicios pago completo */
+setHref("svcPreventivo", CONFIG.services.preventivo);
+setHref("svcProfundo", CONFIG.services.profundo);
+setHref("svcDiagnostico", CONFIG.services.diagnostico);
+setHref("svcCotizacion", CONFIG.services.cotizacion);
 
-// Año
+/* Año footer */
 const y = $("year");
 if(y) y.textContent = new Date().getFullYear();
