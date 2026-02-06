@@ -8,7 +8,7 @@
   --brand:#2b6cff;      /* azul serio */
   --brand2:#38bdf8;     /* acento sutil */
 
-  --bg:#070b12;         /* base */
+  --bg:#070b12;
   --card:rgba(10,16,28,.72);
 
   --shadow:0 30px 90px rgba(0,0,0,.55);
@@ -21,10 +21,7 @@ body{
   margin:0;
   font-family:Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color:var(--ink);
-  background:
-    radial-gradient(900px 520px at 70% 0%, rgba(43,108,255,.18), transparent 62%),
-    radial-gradient(900px 520px at 0% 35%, rgba(56,189,248,.10), transparent 65%),
-    linear-gradient(180deg, #0a1220, #070b12 55%, #060a12);
+  background: var(--bg);
 }
 
 a{color:inherit; text-decoration:none}
@@ -107,51 +104,66 @@ a{color:inherit; text-decoration:none}
   display:grid;
   align-items:center;
   overflow:hidden;
-  padding-top:70px;
+  padding-top:70px; /* topbar */
 }
+
+/* Fondo (SIEMPRE imagen) */
 .hero__bg{
   position:absolute;
   inset:0;
-  background:
-    radial-gradient(1200px 700px at 80% 20%, rgba(56,189,248,.22), transparent 60%),
-    radial-gradient(1100px 700px at 10% 30%, rgba(43,108,255,.18), transparent 62%);
-  filter: saturate(1.05) contrast(1.05);
+  background: url("assets/hero-bg.jpg") center/cover no-repeat;
+  transform: scale(1.02);
+  filter: saturate(1.05) contrast(1.06);
 }
+
+/* Overlays sutiles (marca + legibilidad) */
 .hero__shade{
   position:absolute;
   inset:0;
   background:
-    radial-gradient(900px 500px at 20% 20%, rgba(43,108,255,.25), transparent 62%),
-    radial-gradient(900px 520px at 85% 15%, rgba(56,189,248,.18), transparent 62%),
-    linear-gradient(180deg, rgba(7,11,18,.55), rgba(7,11,18,.85));
+    radial-gradient(900px 520px at 18% 22%, rgba(43,108,255,.18), transparent 60%),
+    radial-gradient(900px 520px at 86% 18%, rgba(56,189,248,.12), transparent 62%),
+    linear-gradient(180deg, rgba(7,11,18,.52), rgba(7,11,18,.78));
 }
+
+/* Diagonal tipo “referencia” */
 .hero__diag{
   position:absolute;
   inset:-20% -30% -20% -30%;
   background:
     linear-gradient(115deg,
-      rgba(7,11,18,.76) 0%,
-      rgba(7,11,18,.76) 40%,
-      rgba(43,108,255,.10) 60%,
+      rgba(7,11,18,.66) 0%,
+      rgba(7,11,18,.66) 40%,
+      rgba(43,108,255,.10) 62%,
       rgba(56,189,248,.06) 100%);
   transform: rotate(-8deg);
   pointer-events:none;
 }
-.hero__content{
+
+.hero__layout{
   position:relative;
+  display:grid;
+  grid-template-columns: 1fr 310px; /* centro + derecha */
+  gap:18px;
+  align-items:center;
+}
+
+.hero__content{
   display:flex;
   justify-content:center;
 }
+
 .hero__center{
   width:min(860px, 100%);
   text-align:center;
   padding:22px 18px;
   border-radius:calc(var(--r) + 6px);
-  background:rgba(7,11,18,.38);
+  background:rgba(7,11,18,.36);
   border:1px solid rgba(255,255,255,.10);
   box-shadow:var(--shadow);
   backdrop-filter: blur(10px);
 }
+
 .chip{
   display:inline-flex;
   align-items:center;
@@ -164,6 +176,7 @@ a{color:inherit; text-decoration:none}
   font-size:12px;
   color:rgba(234,242,255,.88);
 }
+
 h1{
   margin:14px 0 10px;
   font-size:clamp(28px, 4vw, 46px);
@@ -178,6 +191,7 @@ h1{
   font-size:15px;
 }
 .sub span{opacity:.95}
+
 .hero__actions{
   margin-top:16px;
   display:flex;
@@ -185,6 +199,7 @@ h1{
   gap:12px;
   flex-wrap:wrap;
 }
+
 .minirow{
   margin-top:16px;
   display:grid;
@@ -217,7 +232,7 @@ h1{
   font-size:12px;
 }
 
-/* scroll hint */
+/* Scroll hint */
 .scrollhint{
   position:absolute;
   left:50%;
@@ -244,6 +259,93 @@ h1{
   100%{transform: translateY(-10px); opacity:.6}
 }
 
+/* ===== SIDE BUY (derecha) ===== */
+.sidebuy{
+  display:flex;
+  justify-content:flex-end;
+}
+.sidebuy__card{
+  width:100%;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(7,11,18,.38);
+  box-shadow: 0 22px 70px rgba(0,0,0,.45);
+  backdrop-filter: blur(10px);
+  padding:12px;
+}
+
+.sidebuy__title{
+  font-weight:900;
+  letter-spacing:.02em;
+  margin-bottom:4px;
+}
+.sidebuy__sub{
+  color:rgba(234,242,255,.68);
+  font-size:12px;
+  line-height:1.45;
+  margin-bottom:10px;
+}
+
+.buyitem{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 10px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.05);
+  margin-bottom:8px;
+  transition:.15s ease;
+}
+.buyitem:hover{
+  transform: translateY(-1px);
+  background:rgba(255,255,255,.07);
+  border-color: rgba(56,189,248,.25);
+}
+.buyitem__left{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  min-width:0;
+}
+.buyitem__icon{
+  width:34px; height:34px;
+  display:grid; place-items:center;
+  border-radius:12px;
+  background:rgba(56,189,248,.12);
+  border:1px solid rgba(56,189,248,.20);
+}
+.buyitem__txt{min-width:0}
+.buyitem__name{
+  font-weight:900;
+  display:block;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.buyitem__meta{
+  display:block;
+  font-size:12px;
+  color:rgba(234,242,255,.62);
+  margin-top:2px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.buyitem__cta{
+  font-weight:900;
+  color:#bfe7ff;
+  white-space:nowrap;
+}
+
+.sidebuy__foot{
+  margin-top:6px;
+  font-size:11px;
+  color:rgba(234,242,255,.55);
+  text-align:right;
+}
+
 /* ===== Sections ===== */
 .section{
   padding:42px 0;
@@ -268,6 +370,7 @@ h1{
   grid-template-columns:1.1fr .9fr;
   gap:14px;
 }
+
 .card{
   background:var(--card);
   border:1px solid rgba(255,255,255,.10);
@@ -276,6 +379,7 @@ h1{
   padding:16px;
   backdrop-filter: blur(12px);
 }
+
 .row{
   display:flex;
   align-items:flex-start;
@@ -285,8 +389,10 @@ h1{
   border-bottom:1px solid rgba(255,255,255,.08);
 }
 .row:last-child{border-bottom:none}
+
 .t{font-weight:900}
 .s{color:rgba(234,242,255,.65); font-size:12px; margin-top:4px}
+
 .pillprice{
   font-weight:900;
   padding:6px 10px;
@@ -326,6 +432,7 @@ h1{
   padding:16px;
   box-shadow:var(--shadow);
 }
+
 .proof h3{margin:0}
 .proof p{margin:6px 0 0; color:rgba(234,242,255,.68); line-height:1.6}
 
@@ -344,68 +451,6 @@ h1{
 .foot__brand{font-weight:900}
 .foot__mini{color:rgba(234,242,255,.55); font-size:12px}
 
-/* ===== Panel lateral de pago completo ===== */
-.sidepay{
-  position: fixed;
-  right: 18px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 230px;
-  z-index: 60;
-
-  border-radius: 18px;
-  background: rgba(15,23,42,.82);
-  backdrop-filter: blur(14px);
-
-  border:1px solid rgba(255,255,255,.16);
-  box-shadow: 0 25px 70px rgba(0,0,0,.35);
-
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.sidepay__head{
-  font-weight: 900;
-  font-size: 12px;
-  letter-spacing: .04em;
-  opacity: .9;
-  margin-bottom: 4px;
-}
-.sidepay__item{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-
-  padding: 10px 12px;
-  border-radius: 12px;
-
-  border:1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.06);
-
-  font-weight: 900;
-  font-size: 13px;
-
-  transition:.15s ease;
-}
-.sidepay__item:hover{
-  transform: translateX(-4px);
-  background: linear-gradient(90deg, rgba(37,99,235,.22), rgba(56,189,248,.22));
-  border-color: rgba(56,189,248,.45);
-}
-.sidepay__item small{
-  font-weight:900;
-  font-size:11px;
-  opacity:.8;
-}
-.sidepay__foot{
-  margin-top: 6px;
-  font-size: 11px;
-  opacity:.6;
-  text-align:center;
-}
-
 /* ===== Responsive ===== */
 @media (max-width: 980px){
   .nav a{display:none}
@@ -413,27 +458,21 @@ h1{
   .minirow{grid-template-columns:1fr}
   .hero__center{text-align:left}
   .hero__actions{justify-content:flex-start}
+
+  /* derecha baja debajo (no se pierde) */
+  .hero__layout{
+    grid-template-columns: 1fr;
+  }
+  .sidebuy{
+    justify-content:center;
+  }
+  .sidebuy__card{
+    width:min(560px, 100%);
+  }
 }
 
-/* Móvil: panel lateral -> barra inferior */
-@media (max-width: 900px){
-  .sidepay{
-    right: 12px;
-    left: 12px;
-    bottom: 14px;
-    top: auto;
-    transform: none;
-    width: auto;
-
-    flex-direction: row;
-    overflow-x: auto;
-    gap: 10px;
-  }
-  .sidepay__head,
-  .sidepay__foot{
-    display:none;
-  }
-  .sidepay__item{
-    min-width: 180px;
-  }
+@media (max-width: 720px){
+  h1{ font-size: clamp(28px, 8.0vw, 40px); }
+  .btn{ width:100%; }
+  .hero__center{ padding:16px 14px; }
 }
