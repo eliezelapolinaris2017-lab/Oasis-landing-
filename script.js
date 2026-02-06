@@ -7,25 +7,29 @@ const CONFIG = {
 
 const $ = (id)=>document.getElementById(id);
 
-function openWA(msg){
-  const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg || CONFIG.whatsappMsg)}`;
-  window.open(url, "_blank", "noopener,noreferrer");
-}
-
 function setHref(id, href){
   const el = $(id);
   if(el) el.setAttribute("href", href);
 }
 
+function openWA(msg){
+  const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg || CONFIG.whatsappMsg)}`;
+  window.open(url, "_blank", "noopener,noreferrer");
+}
+
+// Stripe
 setHref("btnStripeTop", CONFIG.stripeLink);
 setHref("btnStripeHero", CONFIG.stripeLink);
 setHref("btnStripePolicy", CONFIG.stripeLink);
 
+// Video
 setHref("btnVideoHero", CONFIG.videoLink);
 setHref("btnVideo2", CONFIG.videoLink);
 
+// WhatsApp
 $("waSupport")?.addEventListener("click", (e)=>{ e.preventDefault(); openWA(); });
 $("waSupport2")?.addEventListener("click", (e)=>{ e.preventDefault(); openWA(); });
 
+// Year
 const y = $("year");
 if(y) y.textContent = new Date().getFullYear();
