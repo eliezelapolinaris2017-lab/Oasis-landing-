@@ -8,7 +8,7 @@
   --brand:#2b6cff;      /* azul serio */
   --brand2:#38bdf8;     /* acento sutil */
 
-  --bg:#070b12;         /* base dark */
+  --bg:#070b12;
   --card:rgba(10,16,28,.72);
 
   --shadow:0 30px 90px rgba(0,0,0,.55);
@@ -21,13 +21,16 @@ body{
   margin:0;
   font-family:Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color:var(--ink);
-  background: var(--bg);
+  background:
+    radial-gradient(900px 520px at 65% 0%, rgba(56,189,248,.16), transparent 60%),
+    radial-gradient(900px 520px at 0% 35%, rgba(43,108,255,.10), transparent 62%),
+    linear-gradient(180deg, #0a1220, #070c14 55%, #060a12);
 }
 
 a{color:inherit; text-decoration:none}
 .container{width:min(1080px, 92vw); margin-inline:auto}
 
-/* ===== Topbar minimal ===== */
+/* ===== Topbar ===== */
 .topbar{
   position:fixed;
   top:0; left:0; right:0;
@@ -59,6 +62,7 @@ a{color:inherit; text-decoration:none}
   text-overflow:ellipsis;
   opacity:.9;
 }
+
 .nav{
   display:flex;
   align-items:center;
@@ -92,12 +96,10 @@ a{color:inherit; text-decoration:none}
   background:linear-gradient(90deg, var(--brand), var(--brand2));
   box-shadow:0 18px 40px rgba(43,108,255,.20);
 }
-.btn--ghost{
-  background:rgba(255,255,255,.05);
-}
-.btn--lg{padding:12px 18px; font-size:14px}
+.btn--ghost{ background:rgba(255,255,255,.05); }
+.btn--lg{ padding:12px 18px; font-size:14px; }
 
-/* ===== HERO reference-style ===== */
+/* ===== HERO ===== */
 .hero{
   position:relative;
   min-height:100vh;
@@ -107,46 +109,98 @@ a{color:inherit; text-decoration:none}
   padding-top:70px; /* espacio topbar */
 }
 
-/* fondo: tú pones assets/hero-bg.jpg */
+/* fondo imagen (assets/hero-bg.jpg) */
 .hero__bg{
   position:absolute;
   inset:0;
-  background:
-    url("assets/hero-bg.jpg") center/cover no-repeat;
+  background: url("assets/hero-bg.jpg") center/cover no-repeat;
   transform: scale(1.02);
   filter: saturate(1.05) contrast(1.05);
 }
 
-/* sombra general */
+/* sombra y color sutil */
 .hero__shade{
   position:absolute;
   inset:0;
   background:
-    radial-gradient(900px 500px at 20% 20%, rgba(43,108,255,.25), transparent 62%),
-    radial-gradient(900px 520px at 85% 15%, rgba(56,189,248,.18), transparent 62%),
-    linear-gradient(180deg, rgba(7,11,18,.60), rgba(7,11,18,.85));
+    radial-gradient(900px 520px at 20% 18%, rgba(43,108,255,.22), transparent 62%),
+    radial-gradient(900px 520px at 85% 15%, rgba(56,189,248,.16), transparent 62%),
+    linear-gradient(180deg, rgba(7,11,18,.50), rgba(7,11,18,.86));
 }
 
-/* overlay diagonal tipo referencia */
+/* overlay diagonal tipo “referencia” */
 .hero__diag{
   position:absolute;
   inset:-20% -30% -20% -30%;
   background:
     linear-gradient(115deg,
       rgba(7,11,18,.78) 0%,
-      rgba(7,11,18,.78) 40%,
-      rgba(43,108,255,.10) 60%,
+      rgba(7,11,18,.78) 42%,
+      rgba(43,108,255,.10) 62%,
       rgba(56,189,248,.06) 100%);
   transform: rotate(-8deg);
   pointer-events:none;
-  mix-blend-mode: normal;
+}
+
+/* ===== BRAND IDENTITY (watermark + ribbon) ===== */
+.brand-layer{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+}
+
+/* watermark: usa el logo real si existe */
+.brand-watermark{
+  position:absolute;
+  right:-110px;
+  top:-120px;
+  width:540px;
+  height:540px;
+  opacity:.12;
+  transform: rotate(-10deg);
+  border-radius:999px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(56,189,248,.35), transparent 55%),
+    radial-gradient(circle at 70% 40%, rgba(239,68,68,.18), transparent 55%),
+    url("assets/logo.png") center/320px no-repeat;
+  filter: drop-shadow(0 30px 90px rgba(0,0,0,.45));
+  mix-blend-mode: screen;
+}
+
+/* cinta de mensajes (sutil, corporate) */
+.brand-ribbon{
+  position:absolute;
+  left:50%;
+  top:18px;
+  transform: translateX(-50%);
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+
+  padding:10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.28);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 60px rgba(0,0,0,.40);
+  opacity:.92;
+}
+.brand-ribbon span{
+  font-size: 12px;
+  color: rgba(255,255,255,.85);
+  letter-spacing: .02em;
+  white-space: nowrap;
 }
 
 .hero__content{
   position:relative;
+  z-index:2;
   display:flex;
   justify-content:center;
 }
+
 .hero__center{
   width:min(860px, 100%);
   text-align:center;
@@ -177,6 +231,7 @@ h1{
   letter-spacing:-.02em;
   line-height:1.05;
 }
+
 .sub{
   margin:0 auto;
   max-width:740px;
@@ -200,6 +255,7 @@ h1{
   grid-template-columns: repeat(3, 1fr);
   gap:10px;
 }
+
 .mini{
   border:1px solid rgba(255,255,255,.10);
   background:rgba(255,255,255,.05);
@@ -240,6 +296,7 @@ h1{
   background:rgba(255,255,255,.06);
   display:grid;
   place-items:center;
+  z-index:2;
 }
 .scrollhint span{
   display:block;
@@ -254,18 +311,17 @@ h1{
   100%{transform: translateY(-10px); opacity:.6}
 }
 
-/* ===== Sections below ===== */
+/* ===== Sections ===== */
 .section{
   padding:42px 0;
   background:
     radial-gradient(900px 520px at 10% 0%, rgba(43,108,255,.10), transparent 60%),
+    radial-gradient(900px 520px at 80% 10%, rgba(56,189,248,.08), transparent 60%),
     linear-gradient(180deg, rgba(7,11,18,.95), rgba(7,11,18,.98));
   border-top:1px solid rgba(255,255,255,.06);
 }
-.section__head h2{
-  margin:0;
-  font-size:22px;
-}
+
+.section__head h2{ margin:0; font-size:22px; }
 .section__head p{
   margin:8px 0 0;
   color:rgba(234,242,255,.68);
@@ -328,6 +384,7 @@ h1{
   flex-wrap:wrap;
 }
 
+/* proof */
 .proof{
   display:flex;
   justify-content:space-between;
@@ -340,10 +397,10 @@ h1{
   padding:16px;
   box-shadow:var(--shadow);
 }
-
 .proof h3{margin:0}
 .proof p{margin:6px 0 0; color:rgba(234,242,255,.68); line-height:1.6}
 
+/* footer */
 .footer{
   border-top:1px solid rgba(255,255,255,.06);
   background:rgba(7,11,18,.98);
@@ -359,7 +416,7 @@ h1{
 .foot__brand{font-weight:900}
 .foot__mini{color:rgba(234,242,255,.55); font-size:12px}
 
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width: 980px){
   .nav a{display:none}
   .grid{grid-template-columns:1fr}
@@ -367,105 +424,40 @@ h1{
   .hero__center{text-align:left}
   .hero__actions{justify-content:flex-start}
 }
-/* ==========================
-   MOBILE UPGRADE (sin romper desktop)
-   Pega esto AL FINAL del styles.css
-   ========================== */
 
-/* 1) Ajuste global para que el fondo se vea “premium” en móvil */
+/* Mobile: más “vida” y mejor lectura */
 @media (max-width: 720px){
-  body{
+  .brand-watermark{
+    width:340px; height:340px;
+    right:-90px; top:-95px;
+    opacity:.14;
     background:
-      radial-gradient(700px 520px at 60% 0%, rgba(56,189,248,.22), transparent 60%),
-      radial-gradient(700px 520px at 0% 30%, rgba(34,211,238,.14), transparent 62%),
-      linear-gradient(180deg, #0a1220, #070c14 55%, #060a12);
+      radial-gradient(circle at 30% 30%, rgba(56,189,248,.35), transparent 55%),
+      radial-gradient(circle at 70% 40%, rgba(239,68,68,.18), transparent 55%),
+      url("assets/logo.png") center/220px no-repeat;
   }
-}
 
-/* 2) Hero más compacto y con foco (menos aire vacío) */
-@media (max-width: 720px){
-  .hero{ padding: 26px 0 18px; }
-  .hero__bg{
-    background:
-      radial-gradient(520px 360px at 55% 10%, rgba(56,189,248,.18), transparent 62%),
-      radial-gradient(520px 360px at 0% 35%, rgba(239,68,68,.10), transparent 65%);
+  .brand-ribbon{
+    top:10px;
+    padding:8px 12px;
   }
+  .brand-ribbon span{font-size:11px}
+
+  .hero{ padding-top:74px; }
   h1{
     font-size: clamp(28px, 7.6vw, 40px);
     line-height: 1.05;
-    margin: 12px 0 10px;
   }
   .sub{ font-size: 14px; line-height: 1.6; }
-}
 
-/* 3) La tarjeta principal (glass) debe ocupar bien el ancho y verse más “fuerte” */
-@media (max-width: 720px){
-  .glass{
-    background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
-    border-color: rgba(255,255,255,.14);
-  }
-  .card{ padding: 14px; }
-}
-
-/* 4) Botones: en móvil, full-width y con mejor “tap area” */
-@media (max-width: 720px){
-  .cta-row{ gap: 10px; }
   .btn{
-    width: 100%;
-    padding: 14px 16px;
-    font-size: 15px;
+    width:100%;
+    padding:14px 16px;
+    font-size:15px;
   }
-  .btn--primary{
-    box-shadow: 0 16px 50px rgba(56,189,248,.22);
-  }
-}
 
-/* 5) KPIs / “Proceso – Confirmación – Soporte” en móvil en 1 columna, más legibles */
-@media (max-width: 720px){
-  .card__bottom{
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  .kpi{
-    padding: 12px;
-    border-radius: 16px;
-    background: rgba(0,0,0,.28);
-  }
-  .kpi strong{ font-size: 12px; }
-  .kpi span{ font-size: 14px; }
-}
-
-/* 6) Floating: que no “estorbe” ni se vea fuera de sitio */
-@media (max-width: 720px){
-  .floating{
-    margin-top: 12px;
-    border-radius: 16px;
-    padding: 10px 12px;
-  }
-}
-
-/* 7) Secciones: menos padding en móvil para que se sienta “compacto” */
-@media (max-width: 720px){
-  .section{ padding: 36px 0; }
-  .section__head p{ font-size: 14px; }
-}
-
-/* 8) Navbar: más limpia en móvil */
-@media (max-width: 720px){
-  .header{
-    background: rgba(0,0,0,.60);
-    backdrop-filter: blur(16px);
-  }
-  .nav{ padding: 12px 0; }
-  .logo{ height: 30px; }
-}
-
-/* 9) WhatsApp floating button: que se vea “corporativo” */
-@media (max-width: 720px){
-  .wa-float{
-    right: 14px;
-    bottom: 14px;
-    background: rgba(56,189,248,.12);
-    border-color: rgba(56,189,248,.28);
+  .hero__center{
+    padding:18px 16px;
+    background:rgba(7,11,18,.44);
   }
 }
