@@ -617,3 +617,83 @@ h1{
   }
   .hero__actions{ justify-content:flex-start !important; }
 }
+/* ============================
+   FIX #2: NO separar layout + letras PRO
+   Pegar AL FINAL del styles.css
+   ============================ */
+
+/* Tipografía: que se vea fina y limpia */
+html, body{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+}
+body{ font-weight: 500; }
+h1{ font-weight: 800 !important; letter-spacing: -0.02em !important; }
+.sub{ font-weight: 500 !important; }
+.nav a{ font-weight: 800 !important; }
+
+/* Hero: NO recortar la tarjeta por el panel */
+@media (min-width: 1024px){
+  .hero__center{
+    max-width: 900px !important;     /* vuelve “grande” como antes */
+    width: min(900px, 100%) !important;
+  }
+
+  /* El panel derecho se pega a la derecha sin “robar” layout */
+  .sidebuy{
+    right: 22px !important;
+    top: 52% !important;
+    transform: translateY(-50%) !important;
+    width: 300px !important;
+  }
+}
+
+/* Panel: texto más legible y elegante */
+.sidebuy{
+  font-size: 13px !important;
+}
+.sidebuy h3,
+.sidebuy .title{
+  font-weight: 900 !important;
+  letter-spacing: -0.01em !important;
+}
+.sitem{
+  padding: 10px 10px !important;
+}
+.sitem .name{
+  font-weight: 800 !important;
+}
+.sitem .meta{
+  font-weight: 600 !important;
+  opacity: .78 !important;
+}
+
+/* Botones: que no se vean “inflados” */
+.btn{
+  font-weight: 900 !important;
+  letter-spacing: .01em !important;
+}
+.btn--primary{
+  box-shadow: 0 16px 44px rgba(43,108,255,.20) !important;
+}
+
+/* Tarjetas: oscuras premium, pero NO “plomo” */
+.hero__center,
+.sidebuy{
+  background: linear-gradient(180deg, rgba(8,12,20,.78), rgba(8,12,20,.62)) !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+}
+
+/* En móvil, todo normal (panel baja) */
+@media (max-width: 980px){
+  .sidebuy{
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    margin-top: 12px !important;
+  }
+  .hero__center{
+    max-width: 100% !important;
+  }
+}
