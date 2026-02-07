@@ -244,6 +244,49 @@ h1{
   font-size:12px;
 }
 
+/* ✅ AÑADIDO: Social bar (debajo de la tarjeta principal) */
+.socialbar{
+  margin-top:12px;
+  padding-top:12px;
+  border-top:1px solid rgba(255,255,255,.10);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.socialbar__hello{
+  font-weight:900;
+  letter-spacing:.01em;
+  color:rgba(236,245,255,.92);
+}
+.socialbar__links{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.sbtn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(0,0,0,.18);
+  transition:.15s ease;
+}
+.sbtn:hover{
+  transform: translateY(-1px);
+  border-color: rgba(53,209,255,.22);
+}
+.sbtn__ico{width:18px; height:18px; display:block}
+.sbtn__txt{font-weight:900; font-size:12px; letter-spacing:.01em}
+
+.sbtn--wa{border-color: rgba(37,211,102,.25)}
+/* /AÑADIDO */
+
 /* Derecha: lista pago completo */
 .sidebuy{
   width:100%;
@@ -431,4 +474,5 @@ h1{
   .hero__brandtext::after{
     left:14px;
   }
+  .socialbar{justify-content:flex-start}
 }
