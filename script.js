@@ -6,7 +6,7 @@ const CONFIG = {
 
   // pago completo (4 enlaces)
   fullPay: {
-    preventivo: "https://buy.stripe.com/cNi7sK33waT65s201h1RC0a",
+    preventivo: "https://buy.stripe.com/bJe9AS5bE4uI4nYeWb1RC0e",
     profundo:   "https://buy.stripe.com/8x26oG7jM4uI7Aa6pF1RC0b",
     diagnostico:"https://buy.stripe.com/fZueVc0VobXa6w6dS71RC0c",
     cotizacion: "https://buy.stripe.com/8x2dR87jMgdq3jU9BR1RC0d"
