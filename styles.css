@@ -1,0 +1,124 @@
+:root{
+  --ink:#eaf6ff;
+  --muted:rgba(234,246,255,.72);
+  --brand:#1fa2ff;
+  --brand2:#12d8fa;
+  --panel:rgba(8,18,34,.78);
+  --line:rgba(255,255,255,.14);
+  --r:18px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Manrope,system-ui;
+  color:var(--ink);
+  background:#0b1422;
+}
+
+.container{width:min(1100px,92vw);margin:auto}
+
+/* TOPBAR */
+.topbar{
+  position:fixed;top:0;left:0;right:0;
+  background:rgba(8,18,34,.75);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.topbar__inner{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 0;
+}
+.nav{display:flex;gap:14px;align-items:center}
+.btn{
+  padding:10px 16px;border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.08);
+  font-weight:800;text-decoration:none;color:var(--ink);
+}
+.btn--primary{
+  border:none;
+  background:linear-gradient(90deg,var(--brand),var(--brand2));
+  color:#001018;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  padding-top:90px;
+  position:relative;
+}
+.hero__bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(900px 520px at 80% 20%, rgba(31,162,255,.45), transparent 60%),
+    radial-gradient(900px 520px at 10% 80%, rgba(18,216,250,.25), transparent 60%);
+}
+.hero__shade{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(5,10,18,.35), rgba(5,10,18,.85));
+}
+
+/* BRANDING TEXT EN FONDO */
+.hero__brandtext::before{
+  content:"MANTENIMIENTO • REPARACIÓN • INSTALACIÓN • OASIS • ";
+  position:absolute;
+  top:120px;left:40px;
+  font-weight:900;
+  letter-spacing:.18em;
+  opacity:.18;
+  font-size:12px;
+}
+
+/* CENTER CARD */
+.hero__layout{
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:20px;
+  align-items:start;
+}
+.hero__center{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:22px;
+  backdrop-filter:blur(14px);
+}
+
+/* MINI BLOCKS */
+.minirow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.mini{
+  background:rgba(255,255,255,.08);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:10px;
+}
+
+/* SOCIAL */
+.socialbar{display:flex;gap:12px;margin-top:14px}
+.social{
+  display:flex;gap:8px;align-items:center;
+  padding:10px 14px;border-radius:12px;
+  font-weight:800;color:white;text-decoration:none;
+}
+.social--ig{background:linear-gradient(45deg,#feda75,#d62976,#962fbf,#4f5bd5)}
+.social--wa{background:#25D366;color:#062}
+
+/* SIDEBUY */
+.sidebuy{
+  background:rgba(8,18,34,.88);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:18px;
+}
+.sitem{
+  display:flex;justify-content:space-between;
+  padding:12px;border-bottom:1px solid var(--line);
+  text-decoration:none;color:var(--ink);
+}
+.sitem__cta{font-weight:900;color:#8bd3ff}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero__layout{grid-template-columns:1fr}
+}
