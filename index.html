@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>OASIS AIR CLEANER SERVICES LLC | Reserva</title>
+  <meta name="description" content="Reserva tu servicio con OASIS. Depósito $25 o pago completo. Área metro y pueblos limítrofes."/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+
+<!-- ✅ TOP INFO BAR (tel/email/hora/redes) -->
+<header class="topbar">
+  <div class="container topbar__inner">
+    <div class="topbar__left">
+      <a class="topchip" id="topPhone" href="#" aria-label="Llamar">
+        <span class="ic">📞</span><span>(787) 664-3079</span>
+      </a>
+      <a class="topchip" id="topEmail" href="#" aria-label="Email">
+        <span class="ic">✉️</span><span>contact@oasisservicespr.com</span>
+      </a>
+      <div class="topchip topchip--muted" aria-label="Horario">
+        <span class="ic">🕘</span><span>Lun–Sáb 8:00–6:00</span>
+      </div>
+    </div>
+
+    <div class="topbar__right">
+      <a class="soc" id="igTop" href="#" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+      <a class="soc" id="waTop" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+    </div>
+  </div>
+</header>
+
+<!-- ✅ MAIN HEADER (logo fuera + nav sin duplicar reservas) -->
+<div class="mast">
+  <div class="container mast__inner">
+    <div class="brandOut">
+      <img class="logo" src="assets/logo.png" alt="OASIS Logo"
+        onerror="this.style.display='none';document.getElementById('brandFallback').style.display='block';">
+      <div id="brandFallback" class="brandFallback" style="display:none;">OASIS AIR CLEANER SERVICES LLC</div>
+    </div>
+
+    <nav class="nav">
+      <a href="#slide-1" data-goto="0">Inicio</a>
+      <a href="#slide-2" data-goto="1">Servicios</a>
+      <a href="#slide-3" data-goto="2">Política</a>
+      <a href="#slide-4" data-goto="3">Trabajos</a>
+      <a href="#slide-5" data-goto="4">Suscripción</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ✅ HORIZONTAL SLIDER -->
+<main class="deck" id="deck" aria-label="OASIS Slides">
+  <section class="slides" id="slides">
+
+    <!-- SLIDE 1: HERO OPEN CONCEPT -->
+    <section class="slide hero hero--open" id="slide-1" aria-label="Inicio">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <div class="container heroOpen">
+        <div class="heroOpen__badge">OASIS • Área metro + pueblos limítrofes</div>
+
+        <h1 class="heroOpen__title">
+          Reserva tu servicio<br/>
+          <span>sin complicaciones</span>
+        </h1>
+
+        <p class="heroOpen__sub">
+          Para asegurar tu espacio y horario, se requiere un <strong>depósito de $25</strong>.
+          Se acredita al total del servicio.
+        </p>
+
+        <!-- ✅ ÚNICO botón de reserva (no duplicado) -->
+        <div class="heroOpen__cta">
+          <a class="btn btn--primary" id="btnStripeHero" href="#" target="_blank" rel="noopener noreferrer">
+            Reservar ($25)
+          </a>
+          <a class="btn btn--ghost" id="btnVideoHero" href="#" target="_blank" rel="noopener noreferrer">
+            ▶ Ver mantenimiento real
+          </a>
+        </div>
+
+        <div class="heroOpen__features" aria-label="Beneficios">
+          <div class="feat">
+            <div class="feat__icon">🛠️</div>
+            <div class="feat__txt">
+              <div class="feat__t">Técnicos expertos</div>
+              <div class="feat__s">Trabajo limpio y profesional</div>
+            </div>
+          </div>
+
+          <div class="feat">
+            <div class="feat__icon">📅</div>
+            <div class="feat__txt">
+              <div class="feat__t">Agenda rápida</div>
+              <div class="feat__s">Pagas → se abre agenda</div>
+            </div>
+          </div>
+
+          <div class="feat">
+            <div class="feat__icon">💬</div>
+            <div class="feat__txt">
+              <div class="feat__t">Soporte WhatsApp</div>
+              <div class="feat__s"><a class="link" href="#" id="waSupport">Escríbenos</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="arrow arrow--left" data-dir="-1" aria-label="Anterior">‹</button>
+      <button class="arrow arrow--right" data-dir="1" aria-label="Siguiente">›</button>
+    </section>
+
+    <!-- SLIDE 2: SERVICIOS (pago completo) -->
+    <section class="slide content" id="slide-2" aria-label="Servicios">
+      <div class="container content__wrap">
+        <h2 class="h2">Servicios (pago completo)</h2>
+        <p class="p">
+          Pagas completo ahora y se abre la agenda automáticamente. Sin llamadas eternas, sin “déjame ver”.
+        </p>
+
+        <div class="serviceGrid">
+          <a class="svc" id="svcPreventivo" href="#" target="_blank" rel="noopener">
+            <div class="svc__top">
+              <span class="dot dot--a"></span>
+              <span class="svc__name">Mantenimiento preventivo</span>
+            </div>
+            <div class="svc__desc">Mini split / WallPack</div>
+            <div class="svc__cta">Reservar →</div>
+          </a>
+
+          <a class="svc" id="svcProfundo" href="#" target="_blank" rel="noopener">
+            <div class="svc__top">
+              <span class="dot dot--b"></span>
+              <span class="svc__name">Mantenimiento profundo</span>
+            </div>
+            <div class="svc__desc">Lavado completo</div>
+            <div class="svc__cta">Reservar →</div>
+          </a>
+
+          <a class="svc" id="svcDiagnostico" href="#" target="_blank" rel="noopener">
+            <div class="svc__top">
+              <span class="dot dot--c"></span>
+              <span class="svc__name">Visita de diagnóstico</span>
+            </div>
+            <div class="svc__desc">Evaluación técnica</div>
+            <div class="svc__cta">Reservar →</div>
+          </a>
+
+          <a class="svc" id="svcCotizacion" href="#" target="_blank" rel="noopener">
+            <div class="svc__top">
+              <span class="dot dot--d"></span>
+              <span class="svc__name">Visita para cotización</span>
+            </div>
+            <div class="svc__desc">Propuesta y estimado</div>
+            <div class="svc__cta">Reservar →</div>
+          </a>
+        </div>
+
+        <div class="content__foot">
+          <a class="btn btn--ghost" href="#" id="waSupport2">💬 Dudas por WhatsApp</a>
+          <a class="btn btn--ghost" href="#" id="igLink">Instagram</a>
+        </div>
+      </div>
+
+      <button class="arrow arrow--left" data-dir="-1" aria-label="Anterior">‹</button>
+      <button class="arrow arrow--right" data-dir="1" aria-label="Siguiente">›</button>
+    </section>
+
+    <!-- SLIDE 3: POLÍTICA -->
+    <section class="slide content" id="slide-3" aria-label="Política">
+      <div class="container content__wrap">
+        <h2 class="h2">Política de reserva</h2>
+        <p class="p">Esto protege tu horario y nuestro itinerario. Transparente, sin drama.</p>
+
+        <div class="policy">
+          <ul class="bullets">
+            <li>Depósito <strong>$25 no reembolsable</strong>.</li>
+            <li>Si llegamos y no atienden / no responden → se pierde.</li>
+            <li><strong>15 minutos</strong> de espera máximo → cita cancelada.</li>
+            <li>El depósito se <strong>descuenta</strong> del total del servicio.</li>
+          </ul>
+        </div>
+
+        <div class="content__foot">
+          <a class="btn btn--ghost" href="#" id="waSupport3">💬 Dudas por WhatsApp</a>
+          <!-- ❌ NO duplicamos "Reservar" aquí -->
+        </div>
+      </div>
+
+      <button class="arrow arrow--left" data-dir="-1" aria-label="Anterior">‹</button>
+      <button class="arrow arrow--right" data-dir="1" aria-label="Siguiente">›</button>
+    </section>
+
+    <!-- SLIDE 4: TRABAJOS -->
+    <section class="slide content" id="slide-4" aria-label="Trabajos">
+      <div class="container content__wrap">
+        <h2 class="h2">Trabajos realizados</h2>
+        <p class="p">Verificación visual. Aquí se ve cómo trabajamos, sin cuentos.</p>
+
+        <div class="proofBox">
+          <a class="btn btn--ghost" id="btnVideo2" href="#" target="_blank" rel="noopener noreferrer">
+            ▶ Ver video
+          </a>
+        </div>
+      </div>
+
+      <button class="arrow arrow--left" data-dir="-1" aria-label="Anterior">‹</button>
+      <button class="arrow arrow--right" data-dir="1" aria-label="Siguiente">›</button>
+    </section>
+
+    <!-- SLIDE 5: SUSCRIPCIONES -->
+    <section class="slide content" id="slide-5" aria-label="Suscripción">
+      <div class="container content__wrap">
+        <h2 class="h2">Planes de suscripción</h2>
+        <p class="p">Pagos recurrentes, mantenimiento planificado, y paz mental. Esto es operación seria.</p>
+
+        <div class="pricingWrap">
+          <!-- ✅ PEGA AQUÍ TU SNIPPET DE STRIPE PRICING TABLE -->
+          <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+          <stripe-pricing-table
+            pricing-table-id="prctbl_1SyGoBCr8qV046rWjd160yOM"
+            publishable-key="pk_live_51SPVexCr8qV046rWqWrpkoJ7FjrhGeiFQyWW5efyaqo66yuBLjUNRxQZGIe6Vj3zTQKo5mbDidPDPx6q4VukVUPy00ZsWjSFcu">
+          </stripe-pricing-table>
+        </div>
+
+        <div class="content__foot">
+          <a class="btn btn--ghost" href="#" id="waSupport4">💬 Preguntas por WhatsApp</a>
+        </div>
+      </div>
+
+      <button class="arrow arrow--left" data-dir="-1" aria-label="Anterior">‹</button>
+      <button class="arrow arrow--right" data-dir="1" aria-label="Siguiente">›</button>
+    </section>
+
+  </section>
+
+  <!-- Dots -->
+  <div class="dots" id="dots" aria-label="Navegación"></div>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="foot__brand">OASIS AIR CLEANER SERVICES LLC</div>
+      <div class="foot__mini">© <span id="year"></span> • Área metro y pueblos limítrofes</div>
+    </div>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
