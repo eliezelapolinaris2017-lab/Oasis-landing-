@@ -244,49 +244,6 @@ h1{
   font-size:12px;
 }
 
-/* ✅ AÑADIDO: Social bar (debajo de la tarjeta principal) */
-.socialbar{
-  margin-top:12px;
-  padding-top:12px;
-  border-top:1px solid rgba(255,255,255,.10);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  flex-wrap:wrap;
-}
-.socialbar__hello{
-  font-weight:900;
-  letter-spacing:.01em;
-  color:rgba(236,245,255,.92);
-}
-.socialbar__links{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.sbtn{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 12px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(0,0,0,.18);
-  transition:.15s ease;
-}
-.sbtn:hover{
-  transform: translateY(-1px);
-  border-color: rgba(53,209,255,.22);
-}
-.sbtn__ico{width:18px; height:18px; display:block}
-.sbtn__txt{font-weight:900; font-size:12px; letter-spacing:.01em}
-
-.sbtn--wa{border-color: rgba(37,211,102,.25)}
-/* /AÑADIDO */
-
 /* Derecha: lista pago completo */
 .sidebuy{
   width:100%;
@@ -474,5 +431,89 @@ h1{
   .hero__brandtext::after{
     left:14px;
   }
-  .socialbar{justify-content:flex-start}
+}
+
+/* =========================================================
+   ✅ NUEVO (SIN ROMPER TU DISEÑO): redes + planes
+   ========================================================= */
+
+/* Redes debajo del hero */
+.socialbar{
+  margin-top:12px;
+  padding-top:12px;
+  border-top:1px solid rgba(255,255,255,.10);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.socialbar__hello{
+  font-weight:900;
+  font-size:12px;
+  color:rgba(236,245,255,.90);
+}
+.socialbar__hello span{
+  font-weight:800;
+  color:rgba(236,245,255,.62);
+  margin-left:6px;
+}
+.socialbar__icons{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.sicon{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(0,0,0,.20);
+  transition:.15s ease;
+}
+.sicon:hover{transform:translateY(-1px); border-color: rgba(255,255,255,.22)}
+.sicon svg{
+  width:18px;
+  height:18px;
+  fill:#fff;
+  flex:0 0 auto;
+}
+.sicon span{
+  font-size:12px;
+  font-weight:900;
+}
+
+/* Colores reales “tipo app” */
+.sicon--wa{
+  background:rgba(0,0,0,.20);
+  box-shadow: 0 0 0 1px rgba(37,211,102,.18) inset;
+}
+.sicon--wa svg{ fill:#25D366; }
+.sicon--wa span{ color:#bff7d2; }
+
+.sicon--ig{
+  background:linear-gradient(135deg, rgba(88,81,219,.35), rgba(225,48,108,.25), rgba(252,175,69,.18));
+  box-shadow: 0 0 0 1px rgba(255,255,255,.10) inset;
+}
+.sicon--ig svg{ fill:#fff; }
+.sicon--ig span{ color:#fff; }
+
+/* Planes: envuelve Stripe para que se vea pro */
+.subs{
+  margin-top:16px;
+  background: linear-gradient(180deg, rgba(10,18,34,.88), rgba(6,12,22,.74));
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--r);
+  box-shadow: var(--shadow);
+  padding:14px;
+  backdrop-filter: blur(12px);
+  overflow:hidden;
+}
+
+/* Stripe embed responsivo */
+stripe-pricing-table{
+  width:100%;
+  display:block;
 }
