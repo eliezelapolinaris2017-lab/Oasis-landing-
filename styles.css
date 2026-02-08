@@ -489,3 +489,42 @@ a{color:inherit; text-decoration:none}
   .heroOpen__features{grid-template-columns:1fr}
   .arrow{display:none}
 }
+/* ===== Social reales ===== */
+.soc{
+  width:36px;
+  height:36px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  transition:.15s ease;
+}
+
+.soc svg{
+  width:18px;
+  height:18px;
+}
+
+/* Instagram oficial */
+.soc--ig{
+  background: radial-gradient(circle at 30% 110%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285AEB 90%);
+  color:#fff;
+  border:none;
+  box-shadow:0 10px 28px rgba(214,36,159,.25);
+}
+
+/* WhatsApp oficial */
+.soc--wa{
+  background:#25D366;
+  color:#fff;
+  border:none;
+  box-shadow:0 10px 28px rgba(37,211,102,.25);
+}
+
+.soc:hover{
+  transform:translateY(-2px) scale(1.04);
+}
