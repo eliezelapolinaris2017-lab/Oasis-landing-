@@ -82,48 +82,36 @@
 
         <p class="note">El depósito es para proteger tu horario.</p>
 
-        <!-- ✅ AÑADIDO: Hola + Redes (debajo de la tarjeta principal) -->
-        <div class="socialbar">
-          <div class="socialbar__hello">Hola 👋 Soy tu Tecnico de confianza ➡️</div>
+        <!-- ✅ NUEVO: Hola + redes (debajo de la tarjeta principal) -->
+        <div class="socialbar" aria-label="Redes sociales">
+          <div class="socialbar__hello">Hola 👋 <span>Conecta con nosotros</span></div>
 
-          <div class="socialbar__links">
-            <!-- Instagram (link real) -->
-            <a class="sbtn sbtn--ig"
+          <div class="socialbar__icons">
+            <a class="sicon sicon--ig"
                href="https://www.instagram.com/oasis_services_llc?igsh=MW1tYm5pampmaXZ5bg%3D%3D&utm_source=qr"
                target="_blank" rel="noopener noreferrer"
-               aria-label="Instagram Oasis">
-              <svg class="sbtn__ico" viewBox="0 0 24 24" aria-hidden="true">
-                <defs>
-                  <linearGradient id="igGrad" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#FEDA75"/>
-                    <stop offset="0.28" stop-color="#FA7E1E"/>
-                    <stop offset="0.55" stop-color="#D62976"/>
-                    <stop offset="0.76" stop-color="#962FBF"/>
-                    <stop offset="1" stop-color="#4F5BD5"/>
-                  </linearGradient>
-                </defs>
-                <path fill="url(#igGrad)" d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Z"/>
-                <path fill="#fff" d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"/>
-                <circle cx="17.6" cy="6.4" r="1.1" fill="#fff"/>
+               aria-label="Instagram (Oasis Services LLC)">
+              <!-- Instagram icon (SVG) -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm9 2h-9A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4Zm-4.5 4a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM17.6 6.3a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/>
               </svg>
-              <span class="sbtn__txt">Instagram</span>
+              <span>Instagram</span>
             </a>
 
-            <!-- WhatsApp (verde real) -->
-            <a class="sbtn sbtn--wa"
-               href="https://wa.me/message/UJECWQZV5CQXG1"
+            <a class="sicon sicon--wa"
+               href="#"
                id="waSocial"
                target="_blank" rel="noopener noreferrer"
-               aria-label="WhatsApp Oasis">
-              <svg class="sbtn__ico" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill="#25D366" d="M20.5 11.9A8.5 8.5 0 0 0 6.2 5.7a8.5 8.5 0 0 0-1.1 10.1L4 22l6.4-1.1a8.5 8.5 0 0 0 10.1-9Zm-8.5 7a7 7 0 0 1-3.6-1l-.3-.2-3.8.7.7-3.7-.2-.4a7 7 0 1 1 7.2 4.6Z"/>
-                <path fill="#fff" d="M16.4 14.1c-.2-.1-1.2-.6-1.4-.7-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-.9-.3-1.7-1.1-.6-.5-1-1.2-1.1-1.4-.1-.2 0-.4.1-.5l.5-.6c.1-.1.1-.3.2-.4 0-.1 0-.3-.1-.4l-.7-1.6c-.2-.4-.3-.3-.5-.3h-.4c-.1 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.4.6.2 1 .3 1.3.4.6.2 1.2.2 1.6.1.5-.1 1.2-.5 1.4-.9.2-.4.2-.8.1-.9 0-.1-.2-.2-.4-.3Z"/>
+               aria-label="WhatsApp">
+              <!-- WhatsApp icon (SVG) -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.04 2A9.94 9.94 0 0 0 2.1 11.94c0 1.76.46 3.47 1.33 4.98L2 22l5.26-1.38a9.9 9.9 0 0 0 4.78 1.22h.01A9.95 9.95 0 0 0 22 11.9 9.96 9.96 0 0 0 12.04 2Zm0 18.02h-.01c-1.52 0-3-.4-4.3-1.15l-.31-.18-3.12.82.83-3.04-.2-.31a8.02 8.02 0 0 1-1.22-4.24A8.07 8.07 0 0 1 12.04 3.9a8.07 8.07 0 0 1 8.06 8.03 8.06 8.06 0 0 1-8.07 8.09Zm4.67-6.07c-.25-.12-1.5-.74-1.73-.83-.23-.08-.4-.12-.57.13-.17.25-.66.82-.8.99-.15.17-.29.19-.54.07-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.36-1.71-.14-.25-.01-.38.1-.5.1-.1.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.07-.12-.57-1.38-.79-1.89-.21-.5-.42-.43-.57-.44h-.49c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.02 2.57.12.17 1.76 2.69 4.26 3.77.59.25 1.05.4 1.41.51.59.19 1.13.16 1.55.1.47-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.16-.48-.28Z"/>
               </svg>
-              <span class="sbtn__txt">WhatsApp</span>
+              <span>WhatsApp</span>
             </a>
           </div>
         </div>
-        <!-- /AÑADIDO -->
+        <!-- ✅ /NUEVO -->
 
       </div>
 
@@ -264,20 +252,24 @@
       <a class="btn btn--ghost" id="btnVideo2" href="#" target="_blank" rel="noopener noreferrer">▶ Ver video</a>
     </div>
   </section>
-  <!-- SUSCRIPCIONES -->
-<section class="section" id="suscripciones">
-  <div class="container">
-    <h2>Planes de suscripción</h2>
 
-    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+  <!-- ✅ NUEVO: PLANES (Stripe Pricing Table) -->
+  <section class="section" id="planes">
+    <div class="container section__head">
+      <h2>Planes de suscripción</h2>
+      <p>Planes para mantenimiento programado. Pagas seguro y listo.</p>
+    </div>
 
-    <stripe-pricing-table 
-      pricing-table-id="prctbl_1SyGoBCr8qV046rWjd160yOM"
-      publishable-key="pk_live_51SPVexCr8qV046rWqWrpkoJ7FjrhGeiFQyWW5efyaqo66yuBLjUNRxQZGIe6Vj3zTQKo5mbDidPDPx6q4VukVUPy00ZsWjSFcu">
-    </stripe-pricing-table>
-
-  </div>
-</section>
+    <div class="container subs">
+      <!-- Stripe Pricing Table (tal cual) -->
+      <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+      <stripe-pricing-table
+        pricing-table-id="prctbl_1SyGoBCr8qV046rWjd160yOM"
+        publishable-key="pk_live_51SPVexCr8qV046rWqWrpkoJ7FjrhGeiFQyWW5efyaqo66yuBLjUNRxQZGIe6Vj3zTQKo5mbDidPDPx6q4VukVUPy00ZsWjSFcu">
+      </stripe-pricing-table>
+    </div>
+  </section>
+  <!-- ✅ /NUEVO -->
 
   <footer class="footer">
     <div class="container footer__inner">
