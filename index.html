@@ -9,275 +9,374 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/>
+
+  <!-- Stripe Pricing Table (para la sección de suscripción) -->
+  <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
 </head>
 
 <body>
 
-<header class="topbar">
-  <div class="container topbar__inner">
-    <div class="brand">
-      <img class="logo" src="assets/logo.png" alt="OASIS Logo"
-        onerror="this.style.display='none';document.getElementById('brandFallback').style.display='block';">
-      <div id="brandFallback" class="brand__fallback" style="display:none;">
-        OASIS AIR CLEANER SERVICES LLC
+<!-- ===== TOP INFO BAR (como la referencia) ===== -->
+<div class="topinfo" role="banner">
+  <div class="container topinfo__inner">
+    <div class="topinfo__left">
+      <a class="topinfo__item" href="tel:+17876643079" aria-label="Llamar">
+        <span class="ico" aria-hidden="true">
+          <!-- phone -->
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+            <path d="M6.6 10.8c1.3 2.6 4 5.3 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.4-1 1-1h3c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="txt">787-664-3079</span>
+      </a>
+
+      <a class="topinfo__item" href="mailto:contact@oasisservicespr.com" aria-label="Email">
+        <span class="ico" aria-hidden="true">
+          <!-- mail -->
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+            <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Zm2.4-.5 5.2 4.1c.3.3.9.3 1.2 0L18.1 6H6.4Zm11.6 2.1-4.7 3.7c-1 .8-2.5.8-3.5 0L6 8.1V17.5c0 .6.4 1 1 1h10c.6 0 1-.4 1-1V8.1Z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="txt">contact@oasisservicespr.com</span>
+      </a>
+
+      <div class="topinfo__item topinfo__item--plain" aria-label="Horario">
+        <span class="ico" aria-hidden="true">
+          <!-- clock -->
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+            <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Zm.8-15a.8.8 0 0 0-1.6 0v5c0 .3.1.5.3.6l3.2 2a.8.8 0 1 0 .8-1.4l-2.7-1.7V7Z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="txt">Lun–Vie 8:00–18:00</span>
       </div>
     </div>
 
+    <div class="topinfo__right">
+      <a class="social" href="https://www.instagram.com/oasis_services_llc?igsh=MW1tYm5pampmaXZ5bg%3D%3D&utm_source=qr"
+         target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <!-- Instagram (color real) -->
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <defs>
+            <linearGradient id="ig" x1="0" x2="1" y1="1" y2="0">
+              <stop offset="0" stop-color="#F58529"/>
+              <stop offset="0.35" stop-color="#DD2A7B"/>
+              <stop offset="0.7" stop-color="#8134AF"/>
+              <stop offset="1" stop-color="#515BD4"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#ig)" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm-5 4.3A3.7 3.7 0 1 1 8.3 12 3.7 3.7 0 0 1 12 8.3Zm0 2A1.7 1.7 0 1 0 13.7 12 1.7 1.7 0 0 0 12 10.3ZM17.8 6.6a.9.9 0 1 1-.9-.9.9.9 0 0 1 .9.9Z"/>
+        </svg>
+      </a>
+
+      <a class="social" id="waTop" href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <!-- WhatsApp (color real) -->
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2.2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/>
+          <path fill="#25D366" d="M16.7 13.7c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.6.1l-.7.8c-.2.2-.3.2-.5.1-1-.5-1.8-1.1-2.6-2-.2-.2-.2-.4 0-.5l.5-.6c.1-.2.1-.4 0-.6l-.7-1.6c-.1-.2-.3-.4-.5-.4h-.5c-.2 0-.5.1-.6.3-.2.2-.8.7-.8 1.8 0 1 .8 2.1.9 2.2.1.2 1.6 2.5 3.9 3.4 2.3 1 2.3.7 2.7.7.4-.1 1.3-.5 1.5-1 .2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3Z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HEADER NAV (debajo del topbar) ===== -->
+<header class="sitebar">
+  <div class="container sitebar__inner">
+    <!-- LOGO fuera del header (concepto abierto): va "flotando" a la izquierda -->
+    <a class="brand" href="#" data-go="0" aria-label="Oasis Home">
+      <img class="logo" src="assets/logo.png" alt="OASIS Logo"
+        onerror="this.style.display='none';document.getElementById('brandFallback').style.display='block';">
+      <span id="brandFallback" class="brand__fallback" style="display:none;">OASIS AIR CLEANER SERVICES LLC</span>
+    </a>
+
     <nav class="nav">
-      <a href="#precios">Precios</a>
-      <a href="#politica">Política</a>
-      <a href="#trabajos">Trabajos</a>
-      <a class="btn btn--primary" id="btnStripeTop" href="#" target="_blank" rel="noopener noreferrer">
+      <button class="nav__link" type="button" data-go="0">Home</button>
+      <button class="nav__link" type="button" data-go="1">Servicios</button>
+      <button class="nav__link" type="button" data-go="2">Trabajos</button>
+      <button class="nav__link" type="button" data-go="3">Suscripción</button>
+      <button class="nav__link" type="button" data-go="4">Contacto</button>
+
+      <a class="btn btn--primary" id="btnReserveTop" href="#" target="_blank" rel="noopener noreferrer">
         Reservar ($25)
       </a>
     </nav>
   </div>
 </header>
 
-<main>
+<!-- ===== SLIDER HORIZONTAL ===== -->
+<main class="slider" id="slider" aria-label="Oasis Slides">
+  <div class="track" id="track">
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="hero__bg" aria-hidden="true"></div>
-    <div class="hero__shade" aria-hidden="true"></div>
-    <div class="hero__brandtext" aria-hidden="true"></div>
+    <!-- SLIDE 1: HERO -->
+    <section class="slide hero" data-i="0" aria-label="Home">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__shade" aria-hidden="true"></div>
 
-    <div class="container hero__layout">
+      <div class="container hero__content">
+        <div class="hero__center">
+          <div class="pill">PureComfort</div>
 
-      <!-- Centro -->
-      <div class="hero__center">
-        <div class="chip">📍 Área metro + pueblos limítrofes</div>
+          <h1 class="hero__title">Making Every Season Feel<br/>Just Right</h1>
+          <p class="hero__subtitle">Reserva con depósito o paga completo. Rápido, claro y automático.</p>
 
-        <h1>Reserva tu servicio de aire acondicionado</h1>
-
-        <p class="sub">
-          Para asegurar tu espacio y horario, se requiere un <strong>depósito de $25</strong>.
-          <span>Se acredita al total del servicio.</span>
-        </p>
-
-        <div class="hero__actions">
-          <a class="btn btn--primary btn--lg" id="btnStripeHero" href="#" target="_blank" rel="noopener noreferrer">
-            Reservar cita ($25)
-          </a>
-
-          <a class="btn btn--ghost btn--lg" id="btnVideoHero" href="#" target="_blank" rel="noopener noreferrer">
-            ▶ Ver mantenimiento real
-          </a>
-        </div>
-
-        <div class="minirow">
-          <div class="mini">
-            <div class="mini__k">Proceso</div>
-            <div class="mini__v">Pagar → Agendar</div>
-          </div>
-          <div class="mini">
-            <div class="mini__k">Confirmación</div>
-            <div class="mini__v">Automática</div>
-          </div>
-          <div class="mini">
-            <div class="mini__k">Soporte</div>
-            <a class="mini__v link" href="#" id="waSupport">WhatsApp</a>
-          </div>
-        </div>
-
-        <p class="note">El depósito es para proteger tu horario.</p>
-
-        <!-- ✅ NUEVO: Hola + redes (debajo de la tarjeta principal) -->
-        <div class="socialbar" aria-label="Redes sociales">
-          <div class="socialbar__hello">Hola 👋 <span>Conecta con nosotros</span></div>
-
-          <div class="socialbar__icons">
-            <a class="sicon sicon--ig"
-               href="https://www.instagram.com/oasis_services_llc?igsh=MW1tYm5pampmaXZ5bg%3D%3D&utm_source=qr"
-               target="_blank" rel="noopener noreferrer"
-               aria-label="Instagram (Oasis Services LLC)">
-              <!-- Instagram icon (SVG) -->
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm9 2h-9A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4Zm-4.5 4a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM17.6 6.3a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/>
-              </svg>
-              <span>Instagram</span>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" id="btnReserveHero" href="#" target="_blank" rel="noopener noreferrer">
+              Reservar cita ($25)
             </a>
-
-            <a class="sicon sicon--wa"
-               href="#"
-               id="waSocial"
-               target="_blank" rel="noopener noreferrer"
-               aria-label="WhatsApp">
-              <!-- WhatsApp icon (SVG) -->
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12.04 2A9.94 9.94 0 0 0 2.1 11.94c0 1.76.46 3.47 1.33 4.98L2 22l5.26-1.38a9.9 9.9 0 0 0 4.78 1.22h.01A9.95 9.95 0 0 0 22 11.9 9.96 9.96 0 0 0 12.04 2Zm0 18.02h-.01c-1.52 0-3-.4-4.3-1.15l-.31-.18-3.12.82.83-3.04-.2-.31a8.02 8.02 0 0 1-1.22-4.24A8.07 8.07 0 0 1 12.04 3.9a8.07 8.07 0 0 1 8.06 8.03 8.06 8.06 0 0 1-8.07 8.09Zm4.67-6.07c-.25-.12-1.5-.74-1.73-.83-.23-.08-.4-.12-.57.13-.17.25-.66.82-.8.99-.15.17-.29.19-.54.07-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.36-1.71-.14-.25-.01-.38.1-.5.1-.1.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.07-.12-.57-1.38-.79-1.89-.21-.5-.42-.43-.57-.44h-.49c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.02 2.57.12.17 1.76 2.69 4.26 3.77.59.25 1.05.4 1.41.51.59.19 1.13.16 1.55.1.47-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.16-.48-.28Z"/>
-              </svg>
-              <span>WhatsApp</span>
+            <a class="btn btn--ghost btn--lg" id="btnVideoHero2" href="#" target="_blank" rel="noopener noreferrer">
+              ▶ Ver mantenimiento real
             </a>
           </div>
-        </div>
-        <!-- ✅ /NUEVO -->
 
+          <div class="hero__features">
+            <div class="feat">
+              <div class="feat__icon">🧰</div>
+              <div class="feat__t">Técnicos expertos</div>
+              <div class="feat__s">Soluciones reales, sin improvisar.</div>
+            </div>
+            <div class="feat">
+              <div class="feat__icon">🗓️</div>
+              <div class="feat__t">Agenda flexible</div>
+              <div class="feat__s">Pagas → agenda se abre al instante.</div>
+            </div>
+            <div class="feat">
+              <div class="feat__icon">💵</div>
+              <div class="feat__t">Precio transparente</div>
+              <div class="feat__s">Base clara, ajustes por BTU/condición.</div>
+            </div>
+          </div>
+
+          <div class="hero__meta">
+            <span class="chip">📍 Área metro + pueblos limítrofes</span>
+            <a class="chip chip--link" id="waHero" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
       </div>
 
-      <!-- Derecha: lista compacta (pago completo) -->
-      <aside class="sidebuy" aria-label="Servicios pago completo">
-        <div class="sidebuy__head">
-          <div class="sidebuy__title">Servicios (pago completo)</div>
-          <div class="sidebuy__sub">Pagas ahora → se abre agenda automáticamente</div>
-        </div>
-
-        <div class="sidebuy__list">
-          <a class="sitem" id="svcPreventivo" href="#" target="_blank" rel="noopener noreferrer">
-            <span class="sitem__left">
-              <span class="dot dot--a"></span>
-              <span class="sitem__text">
-                <span class="sitem__name">Mantenimiento preventivo</span>
-                <span class="sitem__desc">Mini split / WallPack</span>
-              </span>
-            </span>
-            <span class="sitem__cta">Reservar →</span>
-          </a>
-
-          <a class="sitem" id="svcProfundo" href="#" target="_blank" rel="noopener noreferrer">
-            <span class="sitem__left">
-              <span class="dot dot--b"></span>
-              <span class="sitem__text">
-                <span class="sitem__name">Mantenimiento profundo</span>
-                <span class="sitem__desc">Lavado completo</span>
-              </span>
-            </span>
-            <span class="sitem__cta">Reservar →</span>
-          </a>
-
-          <a class="sitem" id="svcDiagnostico" href="#" target="_blank" rel="noopener noreferrer">
-            <span class="sitem__left">
-              <span class="dot dot--c"></span>
-              <span class="sitem__text">
-                <span class="sitem__name">Visita de diagnóstico</span>
-                <span class="sitem__desc">Evaluación técnica</span>
-              </span>
-            </span>
-            <span class="sitem__cta">Reservar →</span>
-          </a>
-
-          <a class="sitem" id="svcCotizacion" href="#" target="_blank" rel="noopener noreferrer">
-            <span class="sitem__left">
-              <span class="dot dot--d"></span>
-              <span class="sitem__text">
-                <span class="sitem__name">Visita para cotización</span>
-                <span class="sitem__desc">Propuesta y estimado</span>
-              </span>
-            </span>
-            <span class="sitem__cta">Reservar →</span>
-          </a>
-        </div>
-
-        <div class="sidebuy__foot">
-          <span class="tiny">Stripe → Agenda</span>
-          <a class="tinylink" href="#" id="waSupportSide">¿Dudas? WhatsApp</a>
-        </div>
-      </aside>
-
-    </div>
-
-    <a class="scrollhint" href="#precios" aria-label="Bajar"><span></span></a>
-  </section>
-
-  <!-- PRECIOS -->
-  <section class="section" id="precios">
-    <div class="container section__head">
-      <h2>Servicios y precios base</h2>
-      <p>Precios base sujetos a ubicación, acceso, BTU y condición del equipo.</p>
-    </div>
-
-    <div class="container grid">
-      <article class="card">
-        <div class="row">
-          <div>
-            <div class="t">Mantenimiento preventivo</div>
-            <div class="s">Mini split / WallPack</div>
-          </div>
-          <div class="pillprice">$55+</div>
-        </div>
-
-        <div class="row">
-          <div>
-            <div class="t">Mantenimiento profundo</div>
-            <div class="s">Lavado completo</div>
-          </div>
-          <div class="pillprice">$75+</div>
-        </div>
-
-        <div class="row">
-          <div>
-            <div class="t">Diagnóstico / Reparación</div>
-            <div class="s">Evaluación técnica</div>
-          </div>
-          <div class="pillprice">Cotiza</div>
-        </div>
-
-        <div class="row">
-          <div>
-            <div class="t">Instalaciones</div>
-            <div class="s">Ventana / Mini split</div>
-          </div>
-          <div class="pillprice">Cotiza</div>
-        </div>
-      </article>
-
-      <article class="card" id="politica">
-        <h3>Política de reserva</h3>
-        <ul class="bullets">
-          <li>Depósito <strong>$25 no reembolsable</strong>.</li>
-          <li>Si llegamos y no atienden / no responden → se pierde.</li>
-          <li><strong>15 minutos</strong> de espera máximo → cita cancelada.</li>
-          <li>El depósito se <strong>descuenta</strong> del servicio.</li>
-        </ul>
-
-        <div class="divider"></div>
-
-        <div class="cta2">
-          <a class="btn btn--ghost" href="#" id="waSupport2">💬 Dudas por WhatsApp</a>
-          <a class="btn btn--primary" href="#" id="btnStripePolicy" target="_blank" rel="noopener noreferrer">
-            Reservar ($25)
-          </a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- TRABAJOS -->
-  <section class="section" id="trabajos">
-    <div class="container proof">
-      <div>
-        <h3>Trabajos realizados</h3>
-        <p>Verificación visual. Aquí se ve cómo trabajamos, sin cuentos.</p>
+      <button class="arrow arrow--left" type="button" data-dir="-1" aria-label="Anterior">‹</button>
+      <button class="arrow arrow--right" type="button" data-dir="1" aria-label="Siguiente">›</button>
+      <div class="dots" aria-label="Paginación">
+        <button class="dot active" type="button" data-go="0" aria-label="Slide 1"></button>
+        <button class="dot" type="button" data-go="1" aria-label="Slide 2"></button>
+        <button class="dot" type="button" data-go="2" aria-label="Slide 3"></button>
+        <button class="dot" type="button" data-go="3" aria-label="Slide 4"></button>
+        <button class="dot" type="button" data-go="4" aria-label="Slide 5"></button>
       </div>
-      <a class="btn btn--ghost" id="btnVideo2" href="#" target="_blank" rel="noopener noreferrer">▶ Ver video</a>
-    </div>
-  </section>
+    </section>
 
-  <!-- ✅ NUEVO: PLANES (Stripe Pricing Table) -->
-  <section class="section" id="planes">
-    <div class="container section__head">
-      <h2>Planes de suscripción</h2>
-      <p>Planes para mantenimiento programado. Pagas seguro y listo.</p>
-    </div>
+    <!-- SLIDE 2: SERVICIOS -->
+    <section class="slide section" data-i="1" aria-label="Servicios">
+      <div class="container section__wrap">
+        <header class="section__head">
+          <h2>Servicios y precios base</h2>
+          <p>Precios base sujetos a ubicación, acceso, BTU y condición del equipo.</p>
+        </header>
 
-    <div class="container subs">
-      <!-- Stripe Pricing Table (tal cual) -->
-      <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-      <stripe-pricing-table
-        pricing-table-id="prctbl_1SyGoBCr8qV046rWjd160yOM"
-        publishable-key="pk_live_51SPVexCr8qV046rWqWrpkoJ7FjrhGeiFQyWW5efyaqo66yuBLjUNRxQZGIe6Vj3zTQKo5mbDidPDPx6q4VukVUPy00ZsWjSFcu">
-      </stripe-pricing-table>
-    </div>
-  </section>
-  <!-- ✅ /NUEVO -->
+        <div class="grid">
+          <article class="card">
+            <div class="row">
+              <div>
+                <div class="t">Mantenimiento preventivo</div>
+                <div class="s">Mini split / WallPack</div>
+              </div>
+              <div class="pillprice">$55+</div>
+            </div>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="foot__brand">OASIS AIR CLEANER SERVICES LLC</div>
-      <div class="foot__mini">© <span id="year"></span> • Área metro y pueblos limítrofes</div>
-    </div>
-  </footer>
+            <div class="row">
+              <div>
+                <div class="t">Mantenimiento profundo</div>
+                <div class="s">Lavado completo</div>
+              </div>
+              <div class="pillprice">$75+</div>
+            </div>
 
+            <div class="row">
+              <div>
+                <div class="t">Diagnóstico / Reparación</div>
+                <div class="s">Evaluación técnica</div>
+              </div>
+              <div class="pillprice">Cotiza</div>
+            </div>
+
+            <div class="row">
+              <div>
+                <div class="t">Instalaciones</div>
+                <div class="s">Ventana / Mini split</div>
+              </div>
+              <div class="pillprice">Cotiza</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="cta2">
+              <a class="btn btn--primary" id="btnReserve25Services" href="#" target="_blank" rel="noopener noreferrer">Reservar ($25)</a>
+              <a class="btn btn--ghost" id="btnIGServices" href="https://www.instagram.com/oasis_services_llc?igsh=MW1tYm5pampmaXZ5bg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a class="btn btn--ghost" id="btnWAServices" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Servicios (pago completo)</h3>
+            <p class="muted">Pagas ahora → se abre agenda automáticamente</p>
+
+            <div class="sidebuy__list">
+              <a class="sitem" id="svcPreventivo" href="#" target="_blank" rel="noopener noreferrer">
+                <span class="sitem__left">
+                  <span class="ball ball--a"></span>
+                  <span class="sitem__text">
+                    <span class="sitem__name">Mantenimiento preventivo</span>
+                    <span class="sitem__desc">Mini split / WallPack</span>
+                  </span>
+                </span>
+                <span class="sitem__cta">Reservar</span>
+              </a>
+
+              <a class="sitem" id="svcProfundo" href="#" target="_blank" rel="noopener noreferrer">
+                <span class="sitem__left">
+                  <span class="ball ball--b"></span>
+                  <span class="sitem__text">
+                    <span class="sitem__name">Mantenimiento profundo</span>
+                    <span class="sitem__desc">Lavado completo</span>
+                  </span>
+                </span>
+                <span class="sitem__cta">Reservar</span>
+              </a>
+
+              <a class="sitem" id="svcDiagnostico" href="#" target="_blank" rel="noopener noreferrer">
+                <span class="sitem__left">
+                  <span class="ball ball--c"></span>
+                  <span class="sitem__text">
+                    <span class="sitem__name">Visita de diagnóstico</span>
+                    <span class="sitem__desc">Evaluación técnica</span>
+                  </span>
+                </span>
+                <span class="sitem__cta">Reservar</span>
+              </a>
+
+              <a class="sitem" id="svcCotizacion" href="#" target="_blank" rel="noopener noreferrer">
+                <span class="sitem__left">
+                  <span class="ball ball--d"></span>
+                  <span class="sitem__text">
+                    <span class="sitem__name">Visita para cotización</span>
+                    <span class="sitem__desc">Propuesta y estimado</span>
+                  </span>
+                </span>
+                <span class="sitem__cta">Reservar</span>
+              </a>
+            </div>
+
+            <div class="footrow">
+              <span class="tiny">Stripe → Agenda</span>
+              <a class="tinylink" id="waSupportSide" href="#" target="_blank" rel="noopener noreferrer">¿Dudas? WhatsApp</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <button class="arrow arrow--left" type="button" data-dir="-1" aria-label="Anterior">‹</button>
+      <button class="arrow arrow--right" type="button" data-dir="1" aria-label="Siguiente">›</button>
+    </section>
+
+    <!-- SLIDE 3: TRABAJOS -->
+    <section class="slide section" data-i="2" aria-label="Trabajos">
+      <div class="container section__wrap">
+        <header class="section__head">
+          <h2>Trabajos realizados</h2>
+          <p>Verificación visual. Aquí se ve cómo trabajamos, sin cuentos.</p>
+        </header>
+
+        <div class="proof">
+          <div>
+            <h3>Video / evidencia</h3>
+            <p class="muted">Contenido real para que el cliente entienda el nivel del servicio.</p>
+          </div>
+          <a class="btn btn--ghost" id="btnVideo2" href="#" target="_blank" rel="noopener noreferrer">▶ Ver video</a>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="card">
+          <h3>Política de reserva</h3>
+          <ul class="bullets">
+            <li>Depósito <strong>$25 no reembolsable</strong>.</li>
+            <li>Si llegamos y no atienden / no responden → se pierde.</li>
+            <li><strong>15 minutos</strong> de espera máximo → cita cancelada.</li>
+            <li>El depósito se <strong>descuenta</strong> del servicio.</li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <div class="cta2">
+            <a class="btn btn--ghost" id="waSupport2" href="#" target="_blank" rel="noopener noreferrer">💬 Dudas por WhatsApp</a>
+            <a class="btn btn--primary" id="btnStripePolicy" href="#" target="_blank" rel="noopener noreferrer">Reservar ($25)</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="arrow arrow--left" type="button" data-dir="-1" aria-label="Anterior">‹</button>
+      <button class="arrow arrow--right" type="button" data-dir="1" aria-label="Siguiente">›</button>
+    </section>
+
+    <!-- SLIDE 4: SUSCRIPCIONES -->
+    <section class="slide section" data-i="3" aria-label="Suscripción">
+      <div class="container section__wrap">
+        <header class="section__head">
+          <h2>Planes de suscripción</h2>
+          <p>Clientes que quieren mantenimiento al día, sin estar llamando cada rato.</p>
+        </header>
+
+        <div class="card">
+          <stripe-pricing-table
+            pricing-table-id="prctbl_1SyGoBCr8qV046rWjd160yOM"
+            publishable-key="pk_live_51SPVexCr8qV046rWqWrpkoJ7FjrhGeiFQyWW5efyaqo66yuBLjUNRxQZGIe6Vj3zTQKo5mbDidPDPx6q4VukVUPy00ZsWjSFcu">
+          </stripe-pricing-table>
+        </div>
+      </div>
+
+      <button class="arrow arrow--left" type="button" data-dir="-1" aria-label="Anterior">‹</button>
+      <button class="arrow arrow--right" type="button" data-dir="1" aria-label="Siguiente">›</button>
+    </section>
+
+    <!-- SLIDE 5: CONTACTO -->
+    <section class="slide section" data-i="4" aria-label="Contacto">
+      <div class="container section__wrap">
+        <header class="section__head">
+          <h2>Contacto</h2>
+          <p>Rápido, directo y con seguimiento.</p>
+        </header>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Canales</h3>
+            <div class="list">
+              <a class="list__item" href="tel:+17876643079">📞 787-664-3079</a>
+              <a class="list__item" href="mailto:contact@oasisservicespr.com">✉️ contact@oasisservicespr.com</a>
+              <a class="list__item" href="https://www.instagram.com/oasis_services_llc?igsh=MW1tYm5pampmaXZ5bg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">📷 Instagram</a>
+              <a class="list__item" id="waContact" href="#" target="_blank" rel="noopener noreferrer">🟢 WhatsApp</a>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="cta2">
+              <a class="btn btn--primary" id="btnReserve25Contact" href="#" target="_blank" rel="noopener noreferrer">Reservar ($25)</a>
+              <a class="btn btn--ghost" id="btnWAContact2" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>OASIS AIR CLEANER SERVICES LLC</h3>
+            <p class="muted">Área metro + pueblos limítrofes • Respuesta rápida • Confirmación automática</p>
+            <div class="divider"></div>
+            <p class="footnote">© <span id="year"></span> • Todos los derechos reservados.</p>
+          </article>
+        </div>
+      </div>
+
+      <button class="arrow arrow--left" type="button" data-dir="-1" aria-label="Anterior">‹</button>
+      <button class="arrow arrow--right" type="button" data-dir="1" aria-label="Siguiente">›</button>
+    </section>
+
+  </div>
 </main>
 
 <script src="script.js"></script>
