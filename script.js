@@ -1,3 +1,8 @@
+/* =========================================================
+   OASIS — script.js (PRO, sin romper tu layout)
+   Usa CONFIG tal cual lo enviaste
+========================================================= */
+
 const CONFIG = {
   stripeDeposit: "https://buy.stripe.com/aFa6oGeMe8KY2fQ6pF1RC09",
   whatsappNumber: "17876643079",
@@ -13,38 +18,81 @@ const CONFIG = {
   }
 };
 
-const $ = (id)=>document.getElementById(id);
+(() => {
+  "use strict";
 
-function openWA(msg){
-  const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg || CONFIG.whatsappMsg)}`;
-  window.open(url, "_blank", "noopener,noreferrer");
-}
+  // ===== helpers =====
+  const $ = (id) => document.getElementById(id);
 
-function setHref(id, href){
-  const el = $(id);
-  if(el) el.setAttribute("href", href);
-}
+  const setHref = (id, url) => {
+    const el = $(id);
+    if (!el || !url) return;
+    el.setAttribute("href", url);
+  };
 
-// depósito $25
-setHref("btnStripeTop", CONFIG.stripeDeposit);
-setHref("btnStripeHero", CONFIG.stripeDeposit);
-setHref("btnStripePolicy", CONFIG.stripeDeposit);
+  const setBlank = (id) => {
+    const el = $(id);
+    if (!el) return;
+    el.setAttribute("target", "_blank");
+    el.setAttribute("rel", "noopener noreferrer");
+  };
 
-// video
-setHref("btnVideoHero", CONFIG.videoLink);
-setHref("btnVideo2", CONFIG.videoLink);
+  const waUrl = (msg) => {
+    const text = encodeURIComponent(msg || CONFIG.whatsappMsg || "Hola");
+    return `https://wa.me/${CONFIG.whatsappNumber}?text=${text}`;
+  };
 
-// WhatsApp
-$("waSupport")?.addEventListener("click", (e)=>{ e.preventDefault(); openWA(); });
-$("waSupport2")?.addEventListener("click", (e)=>{ e.preventDefault(); openWA(); });
-$("waSupportSide")?.addEventListener("click", (e)=>{ e.preventDefault(); openWA(); });
+  const setWA = (id, msg) => {
+    const el = $(id);
+    if (!el) return;
+    el.setAttribute("href", waUrl(msg));
+    setBlank(id);
+  };
 
-// pago completo
-setHref("svcPreventivo", CONFIG.fullPay.preventivo);
-setHref("svcProfundo",   CONFIG.fullPay.profundo);
-setHref("svcDiagnostico",CONFIG.fullPay.diagnostico);
-setHref("svcCotizacion", CONFIG.fullPay.cotizacion);
+  function init() {
+    // Año footer
+    const year = $("year");
+    if (year) year.textContent = String(new Date().getFullYear());
 
-// year
-const y = $("year");
-if(y) y.textContent = new Date().getFullYear();
+    // ===== Depósito Stripe ($25) =====
+    setHref("btnStripeTop", CONFIG.stripeDeposit);
+    setBlank("btnStripeTop");
+
+    setHref("btnStripeHero", CONFIG.stripeDeposit);
+    setBlank("btnStripeHero");
+
+    setHref("btnStripePolicy", CONFIG.stripeDeposit);
+    setBlank("btnStripePolicy");
+
+    // ===== Video =====
+    setHref("btnVideoHero", CONFIG.videoLink);
+    setBlank("btnVideoHero");
+
+    setHref("btnVideo2", CONFIG.videoLink);
+    setBlank("btnVideo2");
+
+    // ===== WhatsApp (soporte) =====
+    setWA("waSupport", CONFIG.whatsappMsg);
+    setWA("waSupportSide", "Hola OASIS 👋 Tengo dudas. Quiero reservar y confirmar disponibilidad.");
+    setWA("waSupport2", CONFIG.whatsappMsg);
+
+    // ===== Pago completo (Servicios en la tarjeta derecha) =====
+    setHref("svcPreventivo", CONFIG.fullPay.preventivo);
+    setBlank("svcPreventivo");
+
+    setHref("svcProfundo", CONFIG.fullPay.profundo);
+    setBlank("svcProfundo");
+
+    setHref("svcDiagnostico", CONFIG.fullPay.diagnostico);
+    setBlank("svcDiagnostico");
+
+    setHref("svcCotizacion", CONFIG.fullPay.cotizacion);
+    setBlank("svcCotizacion");
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init, { once: true });
+  } else {
+    init();
+  }
+})();
