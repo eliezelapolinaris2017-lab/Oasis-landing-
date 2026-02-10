@@ -4,7 +4,7 @@ const CONFIG = {
 
   whatsappNumber: "17876643079",
   whatsappMsg: "Hola OASIS 👋 Tengo una pregunta antes de reservar. Área/BTU/Marca:",
-  instagramUrl: "https://www.instagram.com/",
+  instagramUrl: "https://www.instagram.com/oasis_services_llc/",
   videoLink: "https://www.instagram.com/reel/DMREjmoPNvg/?igsh=ZmY3cGZ6cmhuMm9q",
 
   fullPay: {
