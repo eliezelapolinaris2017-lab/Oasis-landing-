@@ -1,5 +1,5 @@
 const CONFIG = {
-  stripeDeposit: "https://buy.stripe.com/aFa6oGeMe8KY2fQ6pF1RC09",
+  stripeDeposit: "https://confirmafy.com/oasis-services-pr",
   athPay: "https://pagos.athmovilapp.com/pagoPorCodigo.html?id=c7995d4c-9a1c-4ab9-8ca9-2561c76b6fc8",
 
   whatsappNumber: "17876643079",
