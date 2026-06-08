@@ -3,311 +3,109 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>OASIS AIR CLEANER SERVICES LLC | Reserva</title>
-  <meta name="description" content="Reserva tu servicio con OASIS. Depósito $25 o pago completo. Área metro y pueblos limítrofes."/>
-
+  <title>Oasis Services PR | HVAC Residencial y Comercial</title>
+  <meta name="description" content="Instalación, mantenimiento y reparación de aires acondicionados en Puerto Rico. Servicio HVAC profesional con agenda rápida, garantías y seguimiento real."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/>
 </head>
-
 <body>
-
-<header class="topbar">
-  <div class="container topbar__inner">
-    <div class="topbar__left">
-      <a class="topchip" id="topPhone" href="#" aria-label="Llamar">
-        <span class="ic">📞</span><span>(787) 664-3079</span>
-      </a>
-      <a class="topchip" id="topEmail" href="#" aria-label="Email">
-        <span class="ic">✉️</span><span>contact@oasisservicespr.com</span>
-      </a>
-      <div class="topchip topchip--muted" aria-label="Horario">
-        <span class="ic">🕘</span><span>Lun–Sáb 8:00–6:00</span>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#contacto">Contacto</a>
+      <div class="nav-actions">
+        <a class="btn btn-primary" id="btnStripeHero" href="https://confirmafy.com/oasis-services-pr">▣ Reservar servicio</a>
+        <a class="btn btn-outline" href="tel:+17876643079">☎ Llamar ahora</a>
       </div>
-    </div>
-
-    <div class="topbar__right">
-      <a class="soc soc--ig" id="igTop" href="#" target="_blank" rel="noopener" aria-label="Instagram">
-        <!-- Instagram (official-ish) -->
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9A3.5 3.5 0 0 0 20 16.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.6-.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/>
-        </svg>
-      </a>
-
-      <a class="soc soc--wa" id="waTop" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <!-- WhatsApp -->
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 3.9A10 10 0 0 0 3.2 18.2L2 22l3.9-1.2A10 10 0 0 0 20 3.9Zm-8 16.1a8 8 0 0 1-4.1-1.1l-.3-.2-2.3.7.7-2.2-.2-.3A8 8 0 1 1 12 20Zm4.6-5.7c-.2-.1-1.3-.6-1.5-.7s-.4-.1-.6.1-.7.7-.9.9-.3.2-.5.1a6.6 6.6 0 0 1-2-1.2 7.3 7.3 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5s0-.3 0-.4c-.1-.1-.6-1.4-.8-2-.2-.6-.4-.5-.6-.5h-.5c-.2 0-.4.1-.6.3s-.8.8-.8 2 .9 2.4 1 2.5a9.5 9.5 0 0 0 3.6 3.6c.5.2.8.3 1.1.4.5.1.9.1 1.2.1.4-.1 1.3-.5 1.5-1 .2-.5.2-.9.1-1s-.2-.2-.4-.3Z"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</header>
-
-<div class="mast">
-  <div class="container mast__inner">
-    <div class="brandOut" style="display:none">
-      <img class="logo" src="assets/logo.png" alt="OASIS Logo"
-        onerror="this.style.display='none';document.getElementById('brandFallback').style.display='block';">
-      <div id="brandFallback" class="brandFallback" style="display:none;">OASIS AIR CLEANER SERVICES LLC</div>
-    </div>
-
-    <nav class="nav">
-      <a href="#slide-1" data-goto="0">Inicio</a>
-      <a href="#slide-2" data-goto="1">Servicios</a>
-      <a href="#slide-3" data-goto="2">Política</a>
-      <a href="#slide-4" data-goto="3">Trabajos</a>
-      <a href="#slide-5" data-goto="4">Final</a>
     </nav>
-  </div>
-</div>
+  </header>
 
-<main class="deck" id="deck" aria-label="OASIS Slides">
-  <section class="slides" id="slides">
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
 
-    <!-- SLIDE 1: HERO -->
-    <section class="slide hero hero--open" id="slide-1" aria-label="Inicio">
-      <div class="bg" aria-hidden="true"></div>
-      <div class="shade" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="eyebrow"><span></span> HVAC RESIDENCIAL Y COMERCIAL <b>•</b> PUERTO RICO</div>
 
-      <div class="container heroOpen">
-        <div class="heroOpen__badge">HVAC RESIDENCIAL Y COMERCIAL • PUERTO RICO</div>
+        <h1>El confort de tu hogar<br><strong>merece profesionales.</strong></h1>
 
-        <h1 class="heroOpen__title">
-          Tu comodidad merece<br/><span>un servicio profesional</span>
-        </h1>
+        <p class="lead">Instalación, mantenimiento y reparación de sistemas de aire acondicionado con técnicos especializados y seguimiento real.</p>
 
-        <p class="heroOpen__sub">
-          Instalación, mantenimiento y reparación de sistemas de aire acondicionado para hogares y negocios con atención organizada y seguimiento real.
-        </p>
-
-        <div class="heroOpen__cta">
-          <a class="btn btn--primary" id="btnStripeHero" href="#" target="_blank" rel="noopener noreferrer">
-            Reservar 
-          </a>
-
-          <a class="btn btn--ath" id="btnAthHero"
-             href="https://pagos.athmovilapp.com/pagoPorCodigo.html?id=c7995d4c-9a1c-4ab9-8ca9-2561c76b6fc8"
-             target="_blank" rel="noopener noreferrer" aria-label="Pagar con ATH Móvil Business">
-            <span class="athLogo" aria-hidden="true"></span>
-            Pagar con ATH Móvil
-          </a>
-
-          <a class="btn btn--ghost" id="btnVideoHero" href="#" target="_blank" rel="noopener noreferrer">
-            ▶ Ver mantenimiento real
-          </a>
+        <div class="cta-row">
+          <a class="btn btn-primary btn-lg" href="https://confirmafy.com/oasis-services-pr">▣ Reservar servicio</a>
+          <a class="btn btn-outline btn-lg" id="waHero" href="#">☏ WhatsApp</a>
+          <a class="btn btn-outline btn-lg" href="tel:+17876643079">☎ Llamar ahora</a>
         </div>
 
-        <div class="heroOpen__features" aria-label="Beneficios">
-          <div class="feat">
-            <div class="feat__icon">🛠️</div>
-            <div class="feat__txt">
-              <div class="feat__t">Técnicos expertos</div>
-              <div class="feat__s">Trabajo limpio y profesional</div>
-            </div>
-          </div>
+        <div class="trust-row" aria-label="Beneficios principales">
+          <div class="trust-item"><span class="line-icon shield"></span><p><b>Técnicos</b><br>especializados</p></div>
+          <div class="trust-item"><span class="line-icon badge"></span><p><b>Garantías</b><br>respaldadas</p></div>
+          <div class="trust-item"><span class="line-icon bolt"></span><p><b>Respuesta</b><br>rápida</p></div>
+          <div class="trust-item"><span class="line-icon pin"></span><p><b>Servicio en todo</b><br>Puerto Rico</p></div>
+        </div>
 
-          <div class="feat">
-            <div class="feat__icon">📅</div>
-            <div class="feat__txt">
-              <div class="feat__t">Agenda rápida</div>
-              <div class="feat__s">Pagas → se abre agenda</div>
-            </div>
-          </div>
+        <div class="stats-card" aria-label="Resumen de experiencia">
+          <div><span class="stat-icon people"></span><p><strong>+8</strong><br>Años de experiencia</p></div>
+          <div><span class="stat-icon check"></span><p><strong>+2K</strong><br>Clientes satisfechos</p></div>
+          <div><span class="stat-icon snow"></span><p><strong>+3K</strong><br>Equipos instalados</p></div>
+          <div><span class="stat-icon pr"></span><p><strong></strong><br>Cobertura en todo Puerto Rico</p></div>
+        </div>
 
-          <div class="feat">
-            <div class="feat__icon">💬</div>
-            <div class="feat__txt">
-              <div class="feat__t">Soporte WhatsApp</div>
-              <div class="feat__s"><a class="link" href="#" id="waSupport">Escríbenos</a></div>
-            </div>
+        <div class="brands" aria-label="Marcas trabajadas">
+          <p>TRABAJAMOS CON LAS MEJORES MARCAS</p>
+          <div class="brand-list">
+            <span>TRANE</span>
+            <span>Carrier</span>
+            <span>MITSUBISHI ELECTRIC</span>
+            <span>DAIKIN</span>
+            <span>LENNOX</span>
+            <span>AirMax</span>
           </div>
         </div>
       </div>
-
-      <button class="arrow arrow--left" data-dir="-1" aria-label="Anterior">‹</button>
-      <button class="arrow arrow--right" data-dir="1" aria-label="Siguiente">›</button>
     </section>
 
-    <!-- SLIDE 2: SERVICIOS -->
-    <section class="slide content content--open" id="slide-2" aria-label="Servicios">
-      <div class="bg" aria-hidden="true"></div>
-      <div class="shade" aria-hidden="true"></div>
-
-      <div class="container openWrap">
-        <div class="openHead">
-          <h2 class="openTitle">Servicios (pago completo)</h2>
-          <p class="openSub">
-            Pagas completo ahora y se abre la agenda automáticamente. Operación simple: <strong>click → pago → agenda</strong>.
-          </p>
-        </div>
-
-        <div class="openList" aria-label="Lista de servicios">
-          <a class="openItem" id="svcPreventivo" href="#" target="_blank" rel="noopener">
-            <span class="openLeft">
-              <span class="dot dot--a"></span>
-              <span class="openText">
-                <span class="openName">Mantenimiento preventivo</span>
-                <span class="openDesc">Mini split / WallPack</span>
-              </span>
-            </span>
-            <span class="openCta">Reservar →</span>
-          </a>
-
-          <a class="openItem" id="svcProfundo" href="#" target="_blank" rel="noopener">
-            <span class="openLeft">
-              <span class="dot dot--b"></span>
-              <span class="openText">
-                <span class="openName">Mantenimiento profundo</span>
-                <span class="openDesc">Lavado completo</span>
-              </span>
-            </span>
-            <span class="openCta">Reservar →</span>
-          </a>
-
-          <a class="openItem" id="svcDiagnostico" href="#" target="_blank" rel="noopener">
-            <span class="openLeft">
-              <span class="dot dot--c"></span>
-              <span class="openText">
-                <span class="openName">Visita de diagnóstico</span>
-                <span class="openDesc">Evaluación técnica</span>
-              </span>
-            </span>
-            <span class="openCta">Reservar →</span>
-          </a>
-
-          <a class="openItem" id="svcCotizacion" href="#" target="_blank" rel="noopener">
-            <span class="openLeft">
-              <span class="dot dot--d"></span>
-              <span class="openText">
-                <span class="openName">Visita para cotización</span>
-                <span class="openDesc">Propuesta y estimado</span>
-              </span>
-            </span>
-            <span class="openCta">Reservar →</span>
-          </a>
-        </div>
-
-        <div class="openActions">
-          <a class="btn btn--ghost" href="#" id="waSupport2">💬 Dudas por WhatsApp</a>
-          <a class="btn btn--ghost" href="#" id="igLink">Instagram</a>
-        </div>
+    <section class="section" id="servicios">
+      <div class="section-head">
+        <span>Servicios</span>
+        <h2>Soluciones HVAC sin vueltas.</h2>
+        <p>Diagnóstico, mantenimiento, reparación e instalación para residencias y comercios.</p>
       </div>
-
-      <button class="arrow arrow--left" data-dir="-1" aria-label="Anterior">‹</button>
-      <button class="arrow arrow--right" data-dir="1" aria-label="Siguiente">›</button>
-    </section>
-
-    <!-- SLIDE 3: POLÍTICA -->
-    <section class="slide content content--open" id="slide-3" aria-label="Política">
-      <div class="bg" aria-hidden="true"></div>
-      <div class="shade" aria-hidden="true"></div>
-
-      <div class="container openWrap">
-        <div class="openHead">
-          <h2 class="openTitle">Política de reserva</h2>
-          <p class="openSub"></p>
-        </div>
-
-        <div class="openBullets">
-          <div class="bulletLine"><span class="bDot"></span> Depósito <strong>$25 no reembolsable</strong>.</div>
-          <div class="bulletLine"><span class="bDot"></span> Si llegamos y no atienden /no hay estacionamiento / no responden → se pierde.</div>
-          <div class="bulletLine"><span class="bDot"></span> <strong>15 minutos</strong> de espera máximo → cita cancelada.</div>
-          <div class="bulletLine"><span class="bDot"></span> El depósito se <strong>descuenta</strong> del total del servicio.</div>
-        </div>
-
-        <div class="openActions">
-          <a class="btn btn--ghost" href="#" id="waSupport3">💬 Dudas por WhatsApp</a>
-        </div>
+      <div class="cards">
+        <article><h3>Mantenimiento preventivo</h3><p>Limpieza, verificación de funcionamiento y recomendaciones claras.</p></article>
+        <article><h3>Diagnóstico técnico</h3><p>Evaluación precisa para evitar gastos innecesarios y decisiones a ciegas.</p></article>
+        <article><h3>Instalación profesional</h3><p>Equipos correctamente instalados, protegidos y listos para rendir.</p></article>
       </div>
-
-      <button class="arrow arrow--left" data-dir="-1" aria-label="Anterior">‹</button>
-      <button class="arrow arrow--right" data-dir="1" aria-label="Siguiente">›</button>
     </section>
 
-    <!-- SLIDE 4: TRABAJOS -->
-    <section class="slide content content--open" id="slide-4" aria-label="Trabajos">
-      <div class="bg" aria-hidden="true"></div>
-      <div class="shade" aria-hidden="true"></div>
-
-      <div class="container openWrap">
-        <div class="openHead">
-          <h2 class="openTitle">Trabajos realizados</h2>
-          <p class="openSub">Aquí no vendemos cuentos: vendemos evidencia.</p>
-        </div>
-
-        <div class="openHeroLine">
-          <div class="openCallout">
-            <div class="openCallout__t">Ver mantenimiento real</div>
-            <div class="openCallout__s">Video en Instagram con trabajo en sitio.</div>
-          </div>
-          <a class="btn btn--ghost" id="btnVideo2" href="#" target="_blank" rel="noopener noreferrer">
-            ▶ Ver video
-          </a>
-        </div>
-
-        <div class="openActions">
-          <a class="btn btn--ghost" href="#" id="waSupport4">💬 Preguntas por WhatsApp</a>
-        </div>
+    <section class="section section-dark" id="proceso">
+      <div class="section-head">
+        <span>Proceso</span>
+        <h2>Simple para el cliente. Serio para el trabajo.</h2>
       </div>
-
-      <button class="arrow arrow--left" data-dir="-1" aria-label="Anterior">‹</button>
-      <button class="arrow arrow--right" data-dir="1" aria-label="Siguiente">›</button>
-    </section>
-
-    <!-- SLIDE 5: FINAL -->
-    <section class="slide content content--open" id="slide-5" aria-label="Final">
-      <div class="bg" aria-hidden="true"></div>
-      <div class="shade" aria-hidden="true"></div>
-
-      <div class="container openWrap">
-        <div class="openHead">
-          <h2 class="openTitle">Listo. Reserva en 30 segundos.</h2>
-          <p class="openSub">
-            Si tienes dudas, escribe por WhatsApp. Si estás ready, paga el depósito y agenda. Así de fácil.
-          </p>
-        </div>
-
-        <div class="finalRow">
-          <a class="btn btn--primary" id="btnStripeFinal" href="#" target="_blank" rel="noopener noreferrer">
-            Reservar ($25)
-          </a>
-
-          <a class="btn btn--ath" id="btnAthFinal"
-             href="https://pagos.athmovilapp.com/pagoPorCodigo.html?id=c7995d4c-9a1c-4ab9-8ca9-2561c76b6fc8"
-             target="_blank" rel="noopener noreferrer">
-            <span class="athLogo" aria-hidden="true"></span>
-            ATH Móvil
-          </a>
-
-          <a class="btn btn--ghost" id="waFinal" href="#" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btn btn--ghost" id="igFinal" href="#" target="_blank" rel="noopener">Instagram</a>
-        </div>
-
-        <div class="finalMini">
-          <div class="miniP">✅ Área metro + pueblos limítrofes</div>
-          <div class="miniP">✅ Depósito acredita al total</div>
-          <div class="miniP">✅ Confirmación rápida</div>
-        </div>
+      <div class="process">
+        <div><b>01</b><h3>Reservas</h3><p>Seleccionas el servicio y coordinamos agenda.</p></div>
+        <div><b>02</b><h3>Evaluamos</h3><p>Revisamos el sistema y explicamos la condición real.</p></div>
+        <div><b>03</b><h3>Resolvemos</h3><p>Ejecutamos el trabajo con comunicación clara.</p></div>
+        <div><b>04</b><h3>Damos seguimiento</h3><p>Oasis no desaparece después de cobrar. Eso es estrategia, no magia.</p></div>
       </div>
-
-      <button class="arrow arrow--left" data-dir="-1" aria-label="Anterior">‹</button>
-      <button class="arrow arrow--right" data-dir="1" aria-label="Siguiente">›</button>
     </section>
 
-  </section>
+    <section class="final-cta" id="contacto">
+      <h2>¿Necesitas servicio para tu aire acondicionado?</h2>
+      <p>Agenda hoy y evita que un problema pequeño se convierta en una factura grande.</p>
+      <div class="cta-row center">
+        <a class="btn btn-primary btn-lg" href="https://confirmafy.com/oasis-services-pr">Reservar servicio</a>
+        <a class="btn btn-outline btn-lg" id="waFinal" href="#">WhatsApp</a>
+      </div>
+    </section>
+  </main>
 
-  <div class="dots" id="dots" aria-label="Navegación"></div>
-
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="foot__brand">OASIS AIR CLEANER SERVICES LLC</div>
-      <div class="foot__mini">© <span id="year"></span> • Área metro y pueblos limítrofes</div>
-    </div>
-  </footer>
-</main>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
