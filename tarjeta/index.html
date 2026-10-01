@@ -328,22 +328,6 @@ body{
         <h2>Oasis Service Puerto Rico</h2>
         <p>Mini Split · Piso Techo · Wallpack</p>
       </div>
-      <div class="detail">
-        <div class="detail-icon"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-        <div><b>Área de servicio</b><span>Área metropolitana · Trujillo Alto, PR 00976</span></div>
-      </div>
-      <div class="detail">
-        <div class="detail-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <div><b>Horario</b><span>Lunes a sábado · 8:00 a.m. – 7:30 p.m.<br>Domingo cerrado</span></div>
-      </div>
-      <div class="detail">
-        <div class="detail-icon"><svg viewBox="0 0 24 24"><path d="M14 2 4 12l6 2-1 8 10-12-6-2z"/></svg></div>
-        <div><b>Servicios adicionales</b><span>Trabajos generales: eléctrico y plomería.</span></div>
-      </div>
-      <div class="detail">
-        <div class="detail-icon"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div>
-        <div><b>Licencia</b><span>#11896</span></div>
-      </div>
     </section>
 
     <div class="links">
@@ -353,7 +337,7 @@ body{
 
     <button class="save" onclick="saveContact()">Guardar contacto de Oasis</button>
 
-    <div class="foot">Oasis Air Cleaner Services LLC · Licencia #11896</div>
+    <div class="foot">Oasis Air Cleaner Services LLC</div>
   </main>
 </div>
 
@@ -368,7 +352,7 @@ function saveContact(){
     "EMAIL;TYPE=WORK:info@oasisservicepr.com",
     "URL:https://oasisservicepr.com",
     "ADR;TYPE=WORK:;;Trujillo Alto;PR;00976;Puerto Rico",
-    "NOTE:Instalación, reparación y mantenimiento de aire acondicionado. Licencia #11896.",
+    "NOTE:Instalación, reparación y mantenimiento de aire acondicionado.",
     "END:VCARD"
   ].join("\r\n");
   const b=new Blob([v],{type:"text/vcard;charset=utf-8"});
