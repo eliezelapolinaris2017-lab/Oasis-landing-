@@ -1,0 +1,10 @@
+{
+  "name":"Oasis Service Puerto Rico",
+  "short_name":"Oasis",
+  "description":"Tarjeta digital de Oasis Air Cleaner Services LLC",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "background_color":"#eef9ff",
+  "theme_color":"#eef9ff"
+}
