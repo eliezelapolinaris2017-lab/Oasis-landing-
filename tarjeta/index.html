@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#eef9ff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Oasis">
+<link rel="manifest" href="./manifest.webmanifest">
 <title>Oasis Service Puerto Rico | Tarjeta Digital</title>
 <link rel="canonical" href="https://servicios.oasisservicepr.com/tarjeta/">
 <meta name="description" content="Tarjeta digital oficial de Oasis Air Cleaner Services LLC. Instalación, reparación y mantenimiento de aire acondicionado en Puerto Rico.">
@@ -251,6 +255,26 @@ body{
   font-weight:800;font-size:14px;cursor:pointer;
   box-shadow:0 14px 28px rgba(4,62,104,.2);
 }
+.share-panel{
+  margin-top:16px;
+  padding:18px;
+  border-radius:24px;
+  background:linear-gradient(145deg,#ffffff,#edfaff);
+  border:1px solid rgba(8,86,126,.08);
+  box-shadow:0 18px 42px rgba(3,66,103,.10);
+}
+.share-panel h3{margin:0 0 5px;font-size:17px;color:#082f4d}
+.share-panel p{margin:0;color:var(--muted);font-size:12px;line-height:1.45}
+.qr-wrap{display:flex;align-items:center;gap:15px;margin-top:14px}
+.qr-wrap img{width:112px;height:112px;border-radius:16px;background:white;padding:8px;box-shadow:0 10px 28px rgba(3,66,103,.12)}
+.qr-copy{flex:1}
+.qr-copy b{display:block;font-size:13px;color:#0a3655;margin-bottom:5px}
+.qr-copy span{display:block;font-size:11px;line-height:1.45;color:var(--muted)}
+.share-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.share-action{border:0;border-radius:16px;min-height:48px;padding:10px 12px;font-weight:800;font-size:13px;cursor:pointer}
+.share-action.primary{background:linear-gradient(135deg,#057fbc,#33c9e2);color:white}
+.share-action.secondary{background:#fff;color:#0a3655;border:1px solid rgba(8,86,126,.10)}
+.install-note{margin-top:12px;padding:12px 13px;border-radius:16px;background:#eaf8fd;color:#315b73;font-size:11px;line-height:1.5}
 .foot{
   padding:20px 8px 4px;text-align:center;color:#7a8f9e;font-size:10px;letter-spacing:.03em;
 }
@@ -337,6 +361,23 @@ body{
 
     <button class="save" onclick="saveContact()">Guardar contacto de Oasis</button>
 
+    <section class="share-panel">
+      <h3>Compartir Oasis</h3>
+      <p>Tu tarjeta está lista para enviarla por mensaje, AirDrop, WhatsApp o enseñarla con QR.</p>
+      <div class="qr-wrap">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAADD0lEQVR4nO2bwY3bMBBF34QCfKSALcClSB2kpnQmlZICAohHAxJ+DiRt7iaXwBt5bY0Phiz7wSQ4+Jr5Q5r459f87d8ZcMghhxxyyCGHXhOy8uryTRsBG5OZjWwGqf5gfMjwHNofGiRJCzD3m2liMyAI0klAkCTpPbTf8BzaDyKv9LAAwxKaK0krmgjKX0BQjpzpi8/JoXug7m83BRcT6U0Qf9nn/JNDzwH9ERHzWUDqMeKKET/rnxx6DqhGRBSQgGHaOkFYIRkCBAlaJ+uLz8mhT4BmMzPrAdJJNgI2EmRj6rCRLZcajxqeQ3trRCMA8/lSFz5ejLkPFAV5xPAcehCUvQezrhQXcw/60UMuPUitW/Ekc3LoHqgUmboYsJkmik0F8ZI/tveeYk4O3fPUMAhA6qmWVHGojPQmGyZhw9Kb9h6eQ7tD2aGSFtAUJWkJgljMqWJTRblDdRSoepZa4bbmWspVvkdcyW8eES8PNQ6VYDNmAxGzZ7kKNtM8ngTJM8sjQNQOVig5Qm5uXCWDWPpbmuJaHjGuEa8M1UUG2tVvvgjtm0fEy0PXzDLoVmQyLG2iqammEJ5HvD5UcoP5+8VEXDDir475LGxYto6SUXRotrDuPjyHdoeqRmitykDJI2odWiuRsmfCNeLFoTYi8urnx8StIqVa2e5HHAJqao0iClDU4uZaZYcqyjXiANDVoVJOIEuRuVBTyQVqeumZ5RGgdp9lEQpKzjBRgyHLiPsRh4CuPmRYjbjka83nFRu0dbkFNo9hdc/yIFDT18jycE0giyjccgt5X+M4UK45i2e5mabUAXVDXQkQ14gDQbczXZriitn5YqXMAG7BUD4+xZwcugsqPfCyS0pTOinvpRuvjfC5r8+PJ5mTQ3fXGsPyYS/EtQEKuB9xWCidxPCzy0KhKV7s1hS18eHDc+g/Q3859/mh2dk2PFwjXh/6eKZLJLDhZ5fPcGi2IEhhtWF52394Du0OXfsaQMkZQtP4apqiknuWR4A+numqV+F9lOjdvS8+J4cccsghhxxyaB/oNwY7ftH2b36RAAAAAElFTkSuQmCC" alt="QR de la tarjeta digital de Oasis">
+        <div class="qr-copy">
+          <b>Escanea para compartir</b>
+          <span>Abre directamente la tarjeta digital de Oasis en cualquier teléfono.</span>
+        </div>
+      </div>
+      <div class="share-actions">
+        <button class="share-action primary" onclick="shareCard()">Compartir tarjeta</button>
+        <button class="share-action secondary" onclick="copyLink()">Copiar enlace</button>
+      </div>
+      <div class="install-note"><b>En iPhone:</b> abre esta página en Safari → Compartir → <b>Añadir a pantalla de inicio</b>. Te quedará como acceso directo con tu tarjeta siempre disponible.</div>
+    </section>
+
     <div class="foot">Oasis Air Cleaner Services LLC</div>
   </main>
 </div>
@@ -365,6 +406,12 @@ async function shareCard(){
   const d={title:"Oasis Service Puerto Rico",text:"Oasis Air Cleaner Services LLC · Servicio HVAC en Puerto Rico.",url:location.href};
   if(navigator.share){try{await navigator.share(d)}catch(e){}}
   else{try{await navigator.clipboard.writeText(location.href);alert("Enlace copiado.");}catch(e){}}
+}
+
+async function copyLink(){
+  const u="https://servicios.oasisservicepr.com/tarjeta/";
+  try{await navigator.clipboard.writeText(u);alert("Enlace copiado.");}
+  catch(e){prompt("Copia este enlace:",u);}
 }
 </script>
 </body>
